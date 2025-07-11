@@ -9,18 +9,18 @@ interface HeroProps {
 const Hero = ({ language }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image - Tea Field */}
+      {/* Background Image - Tea/Yerba Mate Field */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1563822249366-d5e902d7c9a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1597318112184-2b8b24c0e7b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
         }}
       />
       
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
         <div className="mb-6">
-          <span className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full text-green-200 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full text-primary-foreground text-sm font-medium mb-4">
             {language === 'es' ? 'Paraguay 🇵🇾 + Canadá 🇨🇦' : 'Paraguay 🇵🇾 + Canada 🇨🇦'}
           </span>
         </div>
@@ -28,14 +28,14 @@ const Hero = ({ language }: HeroProps) => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           {language === 'es' ? (
             <>
-              Fusionamos <span className="text-green-300">tecnología canadiense</span><br />
-              y <span className="text-green-300">naturaleza paraguaya</span><br />
+              Fusionamos <span className="text-primary">tecnología canadiense</span><br />
+              y <span className="text-primary">naturaleza paraguaya</span><br />
               para nutrir al mundo
             </>
           ) : (
             <>
-              We fuse <span className="text-green-300">Canadian technology</span><br />
-              with <span className="text-green-300">Paraguayan nature</span><br />
+              We fuse <span className="text-primary">Canadian technology</span><br />
+              with <span className="text-primary">Paraguayan nature</span><br />
               to nourish the world
             </>
           )}
@@ -51,7 +51,7 @@ const Hero = ({ language }: HeroProps) => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg rounded-full group"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg rounded-full group"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {language === 'es' ? 'Contacto Comercial' : 'Commercial Contact'}
@@ -70,24 +70,32 @@ const Hero = ({ language }: HeroProps) => {
         {/* Certifications */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
           <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-2xl mb-2">🌿</div>
-            <div className="text-sm text-gray-300 font-semibold">{language === 'es' ? 'Orgánico' : 'Organic'}</div>
-            <div className="text-xs text-gray-400">{language === 'es' ? 'Certificado' : 'Certified'}</div>
+            <div className="w-12 h-12 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center">
+              <span className="text-2xl">🌿</span>
+            </div>
+            <div className="text-sm text-white font-semibold">{language === 'es' ? 'Orgánico' : 'Organic'}</div>
+            <div className="text-xs text-gray-300">{language === 'es' ? 'Certificado' : 'Certified'}</div>
           </div>
           <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-2xl mb-2">💧</div>
-            <div className="text-sm text-gray-300 font-semibold">ISO 14001</div>
-            <div className="text-xs text-gray-400">{language === 'es' ? 'Gestión Ambiental' : 'Environmental'}</div>
+            <div className="w-12 h-12 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center">
+              <span className="text-2xl">💧</span>
+            </div>
+            <div className="text-sm text-white font-semibold">ISO 14001</div>
+            <div className="text-xs text-gray-300">{language === 'es' ? 'Gestión Ambiental' : 'Environmental'}</div>
           </div>
           <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-2xl mb-2">🤝</div>
-            <div className="text-sm text-gray-300 font-semibold">{language === 'es' ? 'Comercio Justo' : 'Fair Trade'}</div>
-            <div className="text-xs text-gray-400">{language === 'es' ? 'Ético' : 'Ethical'}</div>
+            <div className="w-12 h-12 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center">
+              <span className="text-2xl">🤝</span>
+            </div>
+            <div className="text-sm text-white font-semibold">{language === 'es' ? 'Comercio Justo' : 'Fair Trade'}</div>
+            <div className="text-xs text-gray-300">{language === 'es' ? 'Ético' : 'Ethical'}</div>
           </div>
           <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-2xl mb-2">✅</div>
-            <div className="text-sm text-gray-300 font-semibold">HACCP</div>
-            <div className="text-xs text-gray-400">{language === 'es' ? 'Inocuidad' : 'Food Safety'}</div>
+            <div className="w-12 h-12 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center">
+              <span className="text-2xl">✅</span>
+            </div>
+            <div className="text-sm text-white font-semibold">HACCP</div>
+            <div className="text-xs text-gray-300">{language === 'es' ? 'Inocuidad' : 'Food Safety'}</div>
           </div>
         </div>
       </div>
