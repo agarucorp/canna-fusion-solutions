@@ -1,12 +1,67 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState } from 'react';
+import { ChevronDown, Globe, Leaf, Award, Phone, Mail, MapPin } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Products from "@/components/Products";
+import Technology from "@/components/Technology";
+import International from "@/components/International";
+import Sustainability from "@/components/Sustainability";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const Index = () => {
+  const [language, setLanguage] = useState('es');
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-green-100">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="flex items-center space-x-2">
+            <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-800 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">C</span>
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-gray-900">Cannlabs S.A.</h1>
+              <p className="text-xs text-green-600">Natural Extracts Innovation</p>
+            </div>
+          </div>
+          
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#about" className="text-gray-700 hover:text-green-600 transition-colors">
+              {language === 'es' ? 'Quiénes Somos' : 'About Us'}
+            </a>
+            <a href="#products" className="text-gray-700 hover:text-green-600 transition-colors">
+              {language === 'es' ? 'Productos' : 'Products'}
+            </a>
+            <a href="#technology" className="text-gray-700 hover:text-green-600 transition-colors">
+              {language === 'es' ? 'Tecnología' : 'Technology'}
+            </a>
+            <a href="#contact" className="text-gray-700 hover:text-green-600 transition-colors">
+              {language === 'es' ? 'Contacto' : 'Contact'}
+            </a>
+            <LanguageToggle language={language} setLanguage={setLanguage} />
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main>
+        <Hero language={language} />
+        <About language={language} />
+        <Products language={language} />
+        <Technology language={language} />
+        <International language={language} />
+        <Sustainability language={language} />
+        <Contact language={language} />
+      </main>
+
+      <Footer language={language} />
     </div>
   );
 };
