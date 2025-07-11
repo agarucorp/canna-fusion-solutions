@@ -9,18 +9,18 @@ interface HeroProps {
 const Hero = ({ language }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image - Yerba Mate Plantation */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
         }}
       />
       
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
         <div className="mb-6">
-          <span className="inline-block px-4 py-2 bg-green-600/20 backdrop-blur-sm rounded-full text-green-200 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full text-green-200 text-sm font-medium mb-4">
             {language === 'es' ? 'Paraguay 🇵🇾 + Canadá 🇨🇦' : 'Paraguay 🇵🇾 + Canada 🇨🇦'}
           </span>
         </div>
@@ -28,14 +28,14 @@ const Hero = ({ language }: HeroProps) => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           {language === 'es' ? (
             <>
-              Fusionamos <span className="text-green-400">tecnología canadiense</span><br />
-              y <span className="text-green-400">naturaleza paraguaya</span><br />
+              Fusionamos <span className="text-green-300">tecnología canadiense</span><br />
+              y <span className="text-green-300">naturaleza paraguaya</span><br />
               para nutrir al mundo
             </>
           ) : (
             <>
-              We fuse <span className="text-green-400">Canadian technology</span><br />
-              with <span className="text-green-400">Paraguayan nature</span><br />
+              We fuse <span className="text-green-300">Canadian technology</span><br />
+              with <span className="text-green-300">Paraguayan nature</span><br />
               to nourish the world
             </>
           )}
@@ -51,7 +51,7 @@ const Hero = ({ language }: HeroProps) => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg rounded-full group"
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg rounded-full group"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {language === 'es' ? 'Contacto Comercial' : 'Commercial Contact'}
@@ -70,19 +70,19 @@ const Hero = ({ language }: HeroProps) => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
           <div className="text-center">
-            <div className="text-3xl font-bold text-green-400">15+</div>
+            <div className="text-3xl font-bold text-green-300">15+</div>
             <div className="text-sm text-gray-300">{language === 'es' ? 'Países' : 'Countries'}</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-green-400">6°C</div>
+            <div className="text-3xl font-bold text-green-300">6°C</div>
             <div className="text-sm text-gray-300">{language === 'es' ? 'Solubilidad' : 'Solubility'}</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-green-400">100%</div>
+            <div className="text-3xl font-bold text-green-300">100%</div>
             <div className="text-sm text-gray-300">{language === 'es' ? 'Natural' : 'Natural'}</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-green-400">0</div>
+            <div className="text-3xl font-bold text-green-300">0</div>
             <div className="text-sm text-gray-300">{language === 'es' ? 'Agroquímicos' : 'Agrochemicals'}</div>
           </div>
         </div>

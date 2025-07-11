@@ -43,8 +43,8 @@ const About = ({ language }: AboutProps) => {
           
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Innovation"
+              src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Natural Processing Facility"
               className="rounded-2xl shadow-2xl"
             />
           </div>
@@ -53,8 +53,8 @@ const About = ({ language }: AboutProps) => {
         <div className="grid md:grid-cols-4 gap-6">
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Globe className="h-6 w-6 text-green-600" />
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-6 w-6 text-primary" />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">
                 {language === 'es' ? 'Alcance Global' : 'Global Reach'}
@@ -67,8 +67,8 @@ const About = ({ language }: AboutProps) => {
           
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Leaf className="h-6 w-6 text-green-600" />
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Leaf className="h-6 w-6 text-primary" />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">
                 {language === 'es' ? '100% Natural' : '100% Natural'}
@@ -81,8 +81,8 @@ const About = ({ language }: AboutProps) => {
           
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Award className="h-6 w-6 text-green-600" />
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Award className="h-6 w-6 text-primary" />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">
                 {language === 'es' ? 'Calidad Premium' : 'Premium Quality'}
@@ -95,8 +95,8 @@ const About = ({ language }: AboutProps) => {
           
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Factory className="h-6 w-6 text-green-600" />
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Factory className="h-6 w-6 text-primary" />
               </div>
               <h4 className="font-bold text-gray-900 mb-2">
                 {language === 'es' ? 'Tecnología Avanzada' : 'Advanced Technology'}

@@ -13,7 +13,7 @@ const Products = ({ language }: ProductsProps) => {
       description: language === 'es' 
         ? 'Extracto de yerba mate 100% natural, soluble en frío y caliente. Ideal para bebidas energéticas y funcionales.'
         : '100% natural yerba mate extract, soluble in cold and hot water. Ideal for energy and functional beverages.',
-      image: 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1527385352018-3c26dd6c3916?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       applications: language === 'es' ? ['Bebidas RTD', 'Energéticas', 'Funcionales', 'Té Frío'] : ['RTD Beverages', 'Energy Drinks', 'Functional', 'Iced Tea'],
       solubility: '6°C'
     },
@@ -22,7 +22,7 @@ const Products = ({ language }: ProductsProps) => {
       description: language === 'es' 
         ? 'Endulzante natural de stevia rebaudiana, sin amargor residual. Perfecto para aplicaciones alimentarias.'
         : 'Natural stevia rebaudiana sweetener, without residual bitterness. Perfect for food applications.',
-      image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1615485925600-97237c4fc1da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       applications: language === 'es' ? ['Bebidas', 'Panadería', 'Lácteos', 'Confitería'] : ['Beverages', 'Bakery', 'Dairy', 'Confectionery'],
       solubility: '8°C'
     },
@@ -31,7 +31,7 @@ const Products = ({ language }: ProductsProps) => {
       description: language === 'es' 
         ? 'Extracto concentrado de té verde con alto contenido de antioxidantes. Solubilidad excepcional.'
         : 'Concentrated green tea extract with high antioxidant content. Exceptional solubility.',
-      image: 'https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       applications: language === 'es' ? ['Cosmética', 'Suplementos', 'Bebidas', 'Aromaterapia'] : ['Cosmetics', 'Supplements', 'Beverages', 'Aromatherapy'],
       solubility: '6°C'
     },
@@ -40,7 +40,7 @@ const Products = ({ language }: ProductsProps) => {
       description: language === 'es' 
         ? 'Extracto de té negro con sabor intenso y color característico. Ideal para bebidas instantáneas.'
         : 'Black tea extract with intense flavor and characteristic color. Ideal for instant beverages.',
-      image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: 'https://images.unsplash.com/photo-1594631661960-e5585da4e8a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       applications: language === 'es' ? ['Té Instantáneo', 'Bebidas RTD', 'Mezclas', 'Saborizantes'] : ['Instant Tea', 'RTD Beverages', 'Blends', 'Flavorings'],
       solubility: '10°C'
     }
@@ -71,7 +71,7 @@ const Products = ({ language }: ProductsProps) => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4">
-                  <Badge className="bg-green-600 text-white">
+                  <Badge className="bg-primary text-white">
                     {language === 'es' ? 'Soluble desde' : 'Soluble from'} {product.solubility}
                   </Badge>
                 </div>
@@ -90,7 +90,7 @@ const Products = ({ language }: ProductsProps) => {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {product.applications.map((app, appIndex) => (
-                      <Badge key={appIndex} variant="outline" className="text-green-700 border-green-300">
+                      <Badge key={appIndex} variant="outline" className="text-primary border-primary/30">
                         {app}
                       </Badge>
                     ))}
@@ -102,13 +102,13 @@ const Products = ({ language }: ProductsProps) => {
         </div>
         
         <div className="text-center mt-16">
-          <div className="bg-green-50 rounded-2xl p-8 max-w-4xl mx-auto">
+          <div className="bg-primary/5 rounded-2xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {language === 'es' ? 'Formatos Disponibles' : 'Available Formats'}
             </h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🧊</span>
                 </div>
                 <h4 className="font-semibold text-gray-900">
@@ -120,7 +120,7 @@ const Products = ({ language }: ProductsProps) => {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">🔥</span>
                 </div>
                 <h4 className="font-semibold text-gray-900">
@@ -132,7 +132,7 @@ const Products = ({ language }: ProductsProps) => {
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
                   <span className="text-2xl">⚗️</span>
                 </div>
                 <h4 className="font-semibold text-gray-900">
