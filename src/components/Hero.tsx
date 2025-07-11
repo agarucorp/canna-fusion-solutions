@@ -9,11 +9,11 @@ interface HeroProps {
 const Hero = ({ language }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image - Yerba Mate Plantation */}
+      {/* Background Image - Tea Field */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1563822249366-d5e902d7c9a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
         }}
       />
       
@@ -67,23 +67,27 @@ const Hero = ({ language }: HeroProps) => {
           </Button>
         </div>
         
-        {/* Stats */}
+        {/* Certifications */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-300">15+</div>
-            <div className="text-sm text-gray-300">{language === 'es' ? 'Países' : 'Countries'}</div>
+          <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="text-2xl mb-2">🌿</div>
+            <div className="text-sm text-gray-300 font-semibold">{language === 'es' ? 'Orgánico' : 'Organic'}</div>
+            <div className="text-xs text-gray-400">{language === 'es' ? 'Certificado' : 'Certified'}</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-300">6°C</div>
-            <div className="text-sm text-gray-300">{language === 'es' ? 'Solubilidad' : 'Solubility'}</div>
+          <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="text-2xl mb-2">💧</div>
+            <div className="text-sm text-gray-300 font-semibold">ISO 14001</div>
+            <div className="text-xs text-gray-400">{language === 'es' ? 'Gestión Ambiental' : 'Environmental'}</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-300">100%</div>
-            <div className="text-sm text-gray-300">{language === 'es' ? 'Natural' : 'Natural'}</div>
+          <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="text-2xl mb-2">🤝</div>
+            <div className="text-sm text-gray-300 font-semibold">{language === 'es' ? 'Comercio Justo' : 'Fair Trade'}</div>
+            <div className="text-xs text-gray-400">{language === 'es' ? 'Ético' : 'Ethical'}</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-300">0</div>
-            <div className="text-sm text-gray-300">{language === 'es' ? 'Agroquímicos' : 'Agrochemicals'}</div>
+          <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+            <div className="text-2xl mb-2">✅</div>
+            <div className="text-sm text-gray-300 font-semibold">HACCP</div>
+            <div className="text-xs text-gray-400">{language === 'es' ? 'Inocuidad' : 'Food Safety'}</div>
           </div>
         </div>
       </div>

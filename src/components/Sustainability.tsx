@@ -126,57 +126,6 @@ const Sustainability = ({ language }: SustainabilityProps) => {
             </div>
           </div>
         </div>
-        
-        {/* Certifications */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">
-            {language === 'es' ? 'Certificaciones y Compromisos' : 'Certifications & Commitments'}
-          </h3>
-          
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Card className="border-2 border-green-200 bg-white">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Leaf className="h-8 w-8 text-green-600" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2">
-                  {language === 'es' ? 'Orgánico Certificado' : 'Certified Organic'}
-                </h4>
-                <p className="text-sm text-gray-600">
-                  {language === 'es' ? 'Materias primas 100% orgánicas' : '100% organic raw materials'}
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-2 border-blue-200 bg-white">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Droplets className="h-8 w-8 text-blue-600" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2">
-                  {language === 'es' ? 'ISO 14001' : 'ISO 14001'}
-                </h4>
-                <p className="text-sm text-gray-600">
-                  {language === 'es' ? 'Gestión ambiental certificada' : 'Certified environmental management'}
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-2 border-purple-200 bg-white">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-8 w-8 text-purple-600" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2">
-                  {language === 'es' ? 'Comercio Justo' : 'Fair Trade'}
-                </h4>
-                <p className="text-sm text-gray-600">
-                  {language === 'es' ? 'Prácticas comerciales éticas' : 'Ethical business practices'}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
       </div>
     </section>
   );
