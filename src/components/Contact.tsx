@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
+import { motion } from 'framer-motion';
 
 interface ContactProps {
   language: string;
@@ -32,7 +33,14 @@ const Contact = ({ language }: ContactProps) => {
     : ['Soluble Yerba Mate', 'Tea Extracts', 'Natural Stevia', 'Custom Blends', 'Others'];
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <motion.section
+      id="contact"
+      className="py-20 bg-gray-50"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -195,7 +203,14 @@ const Contact = ({ language }: ContactProps) => {
                   </div>
                 </div>
                 {/* Google Maps */}
-                <div className="w-full mt-4 rounded-xl overflow-hidden" style={{height: '180px'}}>
+                <motion.div
+                  className="w-full mt-4 rounded-xl overflow-hidden"
+                  style={{height: '180px'}}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                >
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.073964479836!2d-57.5891496!3d-25.2757206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da6198536dc43%3A0xa98b59c3f2cddc74!2sLas%20Lomas%2C%20Asunci%C3%B3n%2C%20Paraguay!5e0!3m2!1ses-419!2spy!4v1689273600000!5m2!1ses-419!2spy"
                     width="100%"
@@ -206,14 +221,14 @@ const Contact = ({ language }: ContactProps) => {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Ubicación en Google Maps"
                   ></iframe>
-                </div>
+                </motion.div>
               </CardContent>
             </Card>
             
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

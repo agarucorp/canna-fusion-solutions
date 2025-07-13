@@ -1,6 +1,7 @@
 
 import { Globe, Leaf, Award, Factory } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from 'framer-motion';
 
 interface AboutProps {
   language: string;
@@ -8,7 +9,14 @@ interface AboutProps {
 
 const About = ({ language }: AboutProps) => {
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <motion.section
+      id="about"
+      className="py-20 bg-gray-50"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -42,10 +50,14 @@ const About = ({ language }: AboutProps) => {
           </div>
           
           <div className="relative">
-            <img 
+            <motion.img
               src="/about-history.jpg"
               alt="Natural Processing Facility"
               className="rounded-2xl shadow-2xl"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             />
           </div>
         </div>
@@ -108,7 +120,7 @@ const About = ({ language }: AboutProps) => {
           </Card>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

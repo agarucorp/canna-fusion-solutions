@@ -1,6 +1,7 @@
 
 import { Zap, Thermometer, Clock, Award } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from 'framer-motion';
 
 interface TechnologyProps {
   language: string;
@@ -51,7 +52,14 @@ const Technology = ({ language }: TechnologyProps) => {
   ];
 
   return (
-    <section id="technology" className="py-20 bg-gray-50">
+    <motion.section
+      id="technology"
+      className="py-20 bg-gray-50"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       <div className="container mx-auto px-4 space-y-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -82,7 +90,15 @@ const Technology = ({ language }: TechnologyProps) => {
             </ul>
           </div>
           <div className="flex justify-center">
-            <img src="/process.jpg" alt="Spray Dry Industrial" className="rounded-2xl shadow-2xl max-w-lg w-full object-cover" />
+            <motion.img
+              src="/process.jpg"
+              alt="Spray Dry Industrial"
+              className="rounded-2xl shadow-2xl max-w-lg w-full object-cover"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            />
           </div>
         </div>
         {/* Bloque 2: I+D */}
@@ -141,7 +157,7 @@ const Technology = ({ language }: TechnologyProps) => {
           <img src="/certificaciones/iso9001.png" alt="ISO 9001" className="h-10 w-auto" />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
