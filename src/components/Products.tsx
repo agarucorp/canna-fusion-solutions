@@ -70,24 +70,37 @@ const Products = ({ language }: ProductsProps) => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product, idx) => (
+          {products.map((product, index) => (
             <motion.div
-              key={product.name}
-              className="bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center transition-transform duration-300 hover:scale-105"
-              initial={{ opacity: 0, x: idx % 2 === 0 ? -60 : 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.1 * idx, ease: 'easeOut' }}
+              transition={{ duration: 0.7, delay: 0.1 * index, ease: 'easeOut' }}
             >
-              <img src={product.image} alt={product.name} className="w-28 h-28 object-cover rounded-xl mb-4 shadow" />
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
-              <p className="text-gray-600 text-sm mb-4">{product.description}</p>
-              <div className="flex flex-wrap justify-center gap-2 mb-2">
-                {product.applications.map((app) => (
-                  <span key={app} className="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-medium">{app}</span>
-                ))}
-              </div>
-              <span className="text-xs text-gray-400">{language === 'es' ? 'Solubilidad:' : 'Solubility:'} {product.solubility}</span>
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden">
+                <div className="relative h-64 overflow-hidden flex items-center justify-center">
+                  <img 
+                    src={product.image}
+                    alt={product.name}
+                    className="w-28 h-28 object-cover rounded-xl mb-4 shadow"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-2xl text-gray-900">{product.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-6">{product.description}</p>
+                  <div className="flex flex-wrap justify-center gap-2 mb-2">
+                    {product.applications.map((app, appIndex) => (
+                      <Badge key={appIndex} variant="outline" className="text-primary border-primary/30">
+                        {app}
+                      </Badge>
+                    ))}
+                  </div>
+                  <span className="text-xs text-gray-400">{language === 'es' ? 'Solubilidad:' : 'Solubility:'} {product.solubility}</span>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
