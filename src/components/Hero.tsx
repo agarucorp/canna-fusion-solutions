@@ -18,18 +18,13 @@ const Hero = ({ language }: HeroProps) => {
       />
       
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-        <div className="mb-6">
-          <span className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full text-green-200 text-sm font-medium mb-4">
-            {language === 'es' ? 'Paraguay 🇵🇾 + Canadá 🇨🇦' : 'Paraguay 🇵🇾 + Canada 🇨🇦'}
-          </span>
-        </div>
+      <div className="relative z-10 text-center text-white px-4 max-w-7xl mx-auto">
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           {language === 'es' ? (
             <>
-              Fusionamos <span className="text-green-300">tecnología canadiense</span><br />
-              y <span className="text-green-300">naturaleza paraguaya</span><br />
+              Fusionamos <span className="text-green-700">tecnología canadiense</span><br />
+              y <span className="text-green-700">naturaleza paraguaya</span><br />
               para nutrir al mundo
             </>
           ) : (
