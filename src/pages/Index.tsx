@@ -18,7 +18,7 @@ const Index = () => {
   const [language, setLanguage] = useState('es');
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-green-900 border-b border-green-800">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
