@@ -13,7 +13,7 @@ const Products = ({ language }: ProductsProps) => {
       description: language === 'es' 
         ? 'Extracto de yerba mate 100% natural, soluble en frío y caliente. Ideal para bebidas energéticas y funcionales.'
         : '100% natural yerba mate extract, soluble in cold and hot water. Ideal for energy and functional beverages.',
-      image: 'https://images.unsplash.com/photo-1527385352018-3c26dd6c3916?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/yerba-mate.jpg',
       applications: language === 'es' ? ['Bebidas RTD', 'Energéticas', 'Funcionales', 'Té Frío'] : ['RTD Beverages', 'Energy Drinks', 'Functional', 'Iced Tea'],
       solubility: '6°C'
     },
@@ -22,7 +22,7 @@ const Products = ({ language }: ProductsProps) => {
       description: language === 'es' 
         ? 'Endulzante natural de stevia rebaudiana, sin amargor residual. Perfecto para aplicaciones alimentarias.'
         : 'Natural stevia rebaudiana sweetener, without residual bitterness. Perfect for food applications.',
-      image: 'https://images.unsplash.com/photo-1615485925600-97237c4fc1da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/stevia.jpg',
       applications: language === 'es' ? ['Bebidas', 'Panadería', 'Lácteos', 'Confitería'] : ['Beverages', 'Bakery', 'Dairy', 'Confectionery'],
       solubility: '8°C'
     },

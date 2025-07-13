@@ -8,7 +8,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Products from "@/components/Products";
 import Technology from "@/components/Technology";
-import International from "@/components/International";
 import Sustainability from "@/components/Sustainability";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -23,12 +22,8 @@ const Index = () => {
       <nav className="fixed top-0 w-full z-50 bg-[#0d2a13] border-b border-[#0a1e0c]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className="w-16 h-16 flex items-center justify-center">
-              <img src="/logo-cannlabs.png" alt="CannLabs Logo" className="h-12 w-auto object-contain" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-white">Cannlabs S.A.</h1>
-              <p className="text-xs text-green-200">Natural Extracts Innovation</p>
+            <div className="h-20 w-auto flex items-center justify-center">
+              <img src="/logo-cannlabs.png" alt="CannLabs Logo" className="h-16 w-auto object-contain" />
             </div>
           </div>
           
@@ -56,7 +51,6 @@ const Index = () => {
         <About language={language} />
         <Products language={language} />
         <Technology language={language} />
-        <International language={language} />
         <Sustainability language={language} />
         <Contact language={language} />
       </main>
