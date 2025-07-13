@@ -8,7 +8,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Products from "@/components/Products";
 import Technology from "@/components/Technology";
-import Sustainability from "@/components/Sustainability";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LanguageToggle from "@/components/LanguageToggle";
@@ -20,7 +19,7 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-[#0d2a13] border-b border-[#0a1e0c] h-16">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="w-full max-w-none px-8 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <div className="h-12 w-auto flex items-center justify-start">
               <img src="/logo-cannlabs.png" alt="CannLabs Logo" className="h-10 w-auto object-contain" />
@@ -51,7 +50,6 @@ const Index = () => {
         <About language={language} />
         <Products language={language} />
         <Technology language={language} />
-        <Sustainability language={language} />
         <Contact language={language} />
       </main>
 

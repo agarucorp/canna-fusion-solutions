@@ -11,7 +11,7 @@ const Footer = ({ language }: FooterProps) => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="flex items-end h-full">
+          <div className="mb-8">
             <img src="/logo-cannlabs.png" alt="CannLabs Logo" className="h-14 w-auto object-contain opacity-80" />
           </div>
           
