@@ -16,7 +16,7 @@ const Contact = ({ language }: ContactProps) => {
   const [formData, setFormData] = useState({
     name: '',
     company: '',
-    country: '',
+    phone: '',
     interest: '',
     message: ''
   });
@@ -24,7 +24,7 @@ const Contact = ({ language }: ContactProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success(language === 'es' ? 'Mensaje enviado exitosamente. Te contactaremos pronto.' : 'Message sent successfully. We will contact you soon.');
-    setFormData({ name: '', company: '', country: '', interest: '', message: '' });
+    setFormData({ name: '', company: '', phone: '', interest: '', message: '' });
   };
 
   const interests = language === 'es' 
@@ -48,7 +48,7 @@ const Contact = ({ language }: ContactProps) => {
         
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="border-0 shadow-lg">
+          <Card className="border-0 shadow-lg w-full max-w-xl mx-auto">
             <CardHeader>
               <CardTitle className="text-2xl text-gray-900">
                 {language === 'es' ? 'Solicitar Información' : 'Request Information'}
@@ -84,13 +84,14 @@ const Contact = ({ language }: ContactProps) => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {language === 'es' ? 'País *' : 'Country *'}
+                      {language === 'es' ? 'Teléfono *' : 'Phone *'}
                     </label>
                     <Input
                       required
-                      value={formData.country}
-                      onChange={(e) => setFormData({...formData, country: e.target.value})}
-                      placeholder={language === 'es' ? 'Tu país' : 'Your country'}
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      placeholder={language === 'es' ? 'Tu número de teléfono' : 'Your phone number'}
                     />
                   </div>
                   <div>
@@ -132,21 +133,13 @@ const Contact = ({ language }: ContactProps) => {
                   {language === 'es' ? 'Enviar Solicitud' : 'Send Request'}
                 </Button>
                 
-                <div className="flex items-center justify-center space-x-4 pt-4">
-                  <Button variant="outline" className="flex-1">
-                    {language === 'es' ? 'Agendar Llamada' : 'Schedule Call'}
-                  </Button>
-                  <Button variant="outline" className="flex-1">
-                    {language === 'es' ? 'Solicitar Muestra' : 'Request Sample'}
-                  </Button>
-                </div>
               </form>
             </CardContent>
           </Card>
           
           {/* Contact Info */}
           <div className="space-y-6">
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 shadow-lg w-full max-w-xl mx-auto">
               <CardHeader>
                 <CardTitle className="text-xl text-gray-900 flex items-center">
                   <Phone className="mr-2 h-5 w-5 text-green-600" />
@@ -154,6 +147,20 @@ const Contact = ({ language }: ContactProps) => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
+                {/* WhatsApp Contact */}
+                <div className="flex items-center space-x-3">
+                  {/* If you have a WhatsApp icon, use it here. Otherwise, use Globe as a placeholder. */}
+                  <Globe className="h-5 w-5 text-green-600" />
+                  <a
+                    href="https://wa.me/595984299188"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-green-700 hover:underline"
+                  >
+                    {language === 'es' ? 'Escríbenos por WhatsApp' : 'Message us on WhatsApp'}
+                  </a>
+                </div>
+                {/* Existing contact methods */}
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-green-600" />
                   <div>

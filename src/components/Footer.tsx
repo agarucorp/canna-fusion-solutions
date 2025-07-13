@@ -85,6 +85,9 @@ const Footer = ({ language }: FooterProps) => {
             </div>
           </div>
         </div>
+        <div className="w-full flex justify-center mt-6">
+          <p className="text-gray-300 text-sm text-center">© Powered by AgaruCorp</p>
+        </div>
       </div>
     </footer>
   );
