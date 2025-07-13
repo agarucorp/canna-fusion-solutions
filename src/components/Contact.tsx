@@ -146,7 +146,7 @@ const Contact = ({ language }: ContactProps) => {
                   {language === 'es' ? 'Contacto Directo' : 'Direct Contact'}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-1 flex flex-col justify-between gap-4">
+              <CardContent className="flex-1 flex flex-col justify-between gap-2">
                 {/* WhatsApp Contact */}
                 <div className="flex items-center space-x-3">
                    <span className="inline-block align-middle">

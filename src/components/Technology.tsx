@@ -76,7 +76,7 @@ const Technology = ({ language }: TechnologyProps) => {
             </p>
           </div>
           <div className="flex justify-center">
-            <img src="/process-diagram.jpg" alt="Spray Dry Process" className="rounded-2xl shadow-2xl max-w-lg w-full object-cover" />
+            <img src="/spray-dry.jpg" alt="Spray Dry Industrial" className="rounded-2xl shadow-2xl max-w-lg w-full object-cover" />
           </div>
         </div>
         {/* Bloque 2: I+D */}
@@ -101,58 +101,38 @@ const Technology = ({ language }: TechnologyProps) => {
         </div>
       </div>
       {/* Certificaciones alimenticias */}
+      <div className="text-center mb-6">
+        <span className="uppercase tracking-widest text-xs text-green-700 font-semibold block mb-1">
+          {language === 'es' ? 'Certificaciones' : 'Certifications'}
+        </span>
+        <span className="text-base text-gray-600">
+          {language === 'es'
+            ? 'Contamos con múltiples certificados de confianza para nuestros productos.'
+            : 'We hold multiple trusted certifications for our products.'}
+        </span>
+      </div>
       <div className="mt-16">
         <div className="flex flex-wrap justify-center items-center gap-8">
           {/* ISO 22000 */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/iso22000.png" alt="ISO 22000" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">ISO 22000</span>
-          </div>
+          <img src="/certificaciones/iso22000.png" alt="ISO 22000" className="h-10 w-auto" />
           {/* HACCP */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/haccp.png" alt="HACCP" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">HACCP</span>
-          </div>
+          <img src="/certificaciones/haccp.png" alt="HACCP" className="h-10 w-auto" />
           {/* FSSC 22000 */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/fssc22000.png" alt="FSSC 22000" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">FSSC 22000</span>
-          </div>
+          <img src="/certificaciones/fssc22000.png" alt="FSSC 22000" className="h-10 w-auto" />
           {/* BRCGS */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/brcgs.png" alt="BRCGS" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">BRCGS</span>
-          </div>
+          <img src="/certificaciones/brcgs.png" alt="BRCGS" className="h-10 w-auto" />
           {/* IFS */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/ifs.png" alt="IFS" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">IFS</span>
-          </div>
+          <img src="/certificaciones/ifs.png" alt="IFS" className="h-10 w-auto" />
           {/* Kosher */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/kosher.png" alt="Kosher" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">Kosher</span>
-          </div>
+          <img src="/certificaciones/kosher.png" alt="Kosher" className="h-10 w-auto" />
           {/* USDA Organic */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/organico.png" alt="USDA Organic" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">USDA Organic</span>
-          </div>
+          <img src="/certificaciones/organico.png" alt="USDA Organic" className="h-10 w-auto" />
           {/* Non-GMO */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/nongmo.png" alt="Non-GMO" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">Non-GMO</span>
-          </div>
+          <img src="/certificaciones/nongmo.png" alt="Non-GMO" className="h-10 w-auto" />
           {/* Gluten Free */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/glutenfree.png" alt="Gluten Free" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">Gluten Free</span>
-          </div>
+          <img src="/certificaciones/glutenfree.png" alt="Gluten Free" className="h-10 w-auto" />
           {/* ISO 9001 */}
-          <div className="flex flex-col items-center">
-            <img src="/certificaciones/iso9001.png" alt="ISO 9001" className="h-16 w-auto" />
-            <span className="text-sm mt-2 font-medium">ISO 9001</span>
-          </div>
+          <img src="/certificaciones/iso9001.png" alt="ISO 9001" className="h-10 w-auto" />
         </div>
       </div>
     </section>
