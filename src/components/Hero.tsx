@@ -13,7 +13,7 @@ const Hero = ({ language }: HeroProps) => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1597318112184-2b8b24c0e7b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/hero-bg.jpg')`
         }}
       />
       
@@ -56,14 +56,6 @@ const Hero = ({ language }: HeroProps) => {
           >
             {language === 'es' ? 'Contacto Comercial' : 'Commercial Contact'}
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg rounded-full backdrop-blur-sm"
-          >
-            {language === 'es' ? 'Descargar Brochure' : 'Download Brochure'}
           </Button>
         </div>
         
