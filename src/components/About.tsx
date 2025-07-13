@@ -44,6 +44,8 @@ const About = ({ language }: AboutProps) => {
             <img 
               src="/nuestra-historia.jpg"
               alt="Historia Cannlabs"
+              width="100%"
+              height="auto"
               className="rounded-2xl shadow-2xl"
             />
           </div>

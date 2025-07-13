@@ -9,11 +9,11 @@ interface HeroProps {
 const Hero = ({ language }: HeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Imagen de fondo */}
+      {/* Imagen de fondo HERO - forzar recompilación */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none select-none"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/hero-bg-v2.jpg')`
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/hero-bg-v3.jpg')`
         }}
       />
       {/* Contenido */}
