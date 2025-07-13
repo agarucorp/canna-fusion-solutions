@@ -60,7 +60,7 @@ const Technology = ({ language }: TechnologyProps) => {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-      <div className="container mx-auto px-4 space-y-24">
+      <div className="mx-auto px-4 space-y-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {language === 'es' ? 'Tecnología' : 'Technology'}
