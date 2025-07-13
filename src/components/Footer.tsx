@@ -11,27 +11,8 @@ const Footer = ({ language }: FooterProps) => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">C</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Cannlabs S.A.</h3>
-                <p className="text-xs text-green-400">Natural Extracts Innovation</p>
-              </div>
-            </div>
-            <p className="text-gray-400 text-sm mb-4">
-              {language === 'es' 
-                ? 'Fusionamos tecnología canadiense y naturaleza paraguaya para crear extractos herbales de clase mundial.'
-                : 'We fuse Canadian technology and Paraguayan nature to create world-class herbal extracts.'
-              }
-            </p>
-            <div className="flex space-x-2">
-              <span className="text-2xl">🇵🇾</span>
-              <span className="text-xl">+</span>
-              <span className="text-2xl">🇨🇦</span>
-            </div>
+          <div className="flex items-end h-full">
+            <img src="/logo-cannlabs.png" alt="CannLabs Logo" className="h-14 w-auto object-contain opacity-80" />
           </div>
           
           {/* Products */}
