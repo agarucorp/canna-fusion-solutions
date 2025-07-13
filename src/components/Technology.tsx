@@ -57,6 +57,11 @@ const Technology = ({ language }: TechnologyProps) => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {language === 'es' ? 'Tecnología' : 'Technology'}
           </h2>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            {language === 'es'
+              ? 'Innovación y calidad en cada proceso.'
+              : 'Innovation and quality in every process.'}
+          </p>
         </div>
         {/* Bloque 1: Spray Dry */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -106,58 +111,53 @@ const Technology = ({ language }: TechnologyProps) => {
         <div className="flex flex-wrap justify-center items-center gap-8">
           {/* ISO 22000 */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">📄</span>
-            <span className="text-sm mt-2">ISO 22000</span>
+            <img src="/certificaciones/iso22000.svg" alt="ISO 22000" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">ISO 22000</span>
           </div>
           {/* HACCP */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">🛡️</span>
-            <span className="text-sm mt-2">HACCP</span>
+            <img src="/certificaciones/haccp.svg" alt="HACCP" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">HACCP</span>
           </div>
           {/* FSSC 22000 */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">🌐</span>
-            <span className="text-sm mt-2">FSSC 22000</span>
+            <img src="/certificaciones/fssc22000.svg" alt="FSSC 22000" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">FSSC 22000</span>
           </div>
           {/* BRCGS */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">🇬🇧</span>
-            <span className="text-sm mt-2">BRCGS</span>
+            <img src="/certificaciones/brcgs.svg" alt="BRCGS" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">BRCGS</span>
           </div>
           {/* IFS */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">🏷️</span>
-            <span className="text-sm mt-2">IFS</span>
+            <img src="/certificaciones/ifs.svg" alt="IFS" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">IFS</span>
           </div>
           {/* Kosher */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">✡️</span>
-            <span className="text-sm mt-2">Kosher</span>
+            <img src="/certificaciones/kosher.svg" alt="Kosher" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">Kosher</span>
           </div>
-          {/* Halal */}
+          {/* USDA Organic */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">🕌</span>
-            <span className="text-sm mt-2">Halal</span>
-          </div>
-          {/* Orgánico */}
-          <div className="flex flex-col items-center">
-            <span className="text-4xl">��</span>
-            <span className="text-sm mt-2">Orgánico</span>
+            <img src="/certificaciones/organico.svg" alt="USDA Organic" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">USDA Organic</span>
           </div>
           {/* Non-GMO */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">🚫🌽</span>
-            <span className="text-sm mt-2">Non-GMO</span>
+            <img src="/certificaciones/nongmo.svg" alt="Non-GMO" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">Non-GMO</span>
           </div>
           {/* Gluten Free */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">🚫🌾</span>
-            <span className="text-sm mt-2">Gluten Free</span>
+            <img src="/certificaciones/glutenfree.svg" alt="Gluten Free" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">Gluten Free</span>
           </div>
           {/* ISO 9001 */}
           <div className="flex flex-col items-center">
-            <span className="text-4xl">📋</span>
-            <span className="text-sm mt-2">ISO 9001</span>
+            <img src="/certificaciones/iso9001.svg" alt="ISO 9001" className="h-16 w-auto" />
+            <span className="text-sm mt-2 font-medium">ISO 9001</span>
           </div>
         </div>
       </div>
