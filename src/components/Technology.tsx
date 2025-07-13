@@ -72,13 +72,7 @@ const Technology = ({ language }: TechnologyProps) => {
           </p>
         </div>
         {/* Bloque 1: Spray Dry */}
-        <motion.div
-          className="grid md:grid-cols-2 gap-12 items-center"
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-left">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {language === 'es' ? 'Spray Dry Industrial' : 'Industrial Spray Dry'}
@@ -106,15 +100,9 @@ const Technology = ({ language }: TechnologyProps) => {
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             />
           </div>
-        </motion.div>
+        </div>
         {/* Bloque 2: I+D */}
-        <motion.div
-          className="grid md:grid-cols-2 gap-12 items-start"
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="flex justify-start md:pl-0 pl-0 order-1 md:order-none">
             <img src="/spray-dry.jpg" alt="I+D y Formulación" className="rounded-2xl shadow-2xl max-w-md w-full object-cover" />
           </div>
@@ -132,7 +120,7 @@ const Technology = ({ language }: TechnologyProps) => {
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Innovación continua en I+D' : 'Continuous innovation in R&D'}</li>
             </ul>
           </div>
-        </motion.div>
+        </div>
       </div>
       {/* Certificaciones alimenticias */}
       <div className="text-center mb-6 mt-20">

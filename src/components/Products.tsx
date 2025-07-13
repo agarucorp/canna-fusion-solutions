@@ -1,7 +1,6 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { motion } from 'framer-motion';
 
 interface ProductsProps {
   language: string;
@@ -48,14 +47,7 @@ const Products = ({ language }: ProductsProps) => {
   ];
 
   return (
-    <motion.section
-      id="products"
-      className="py-20 bg-white"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
-    >
+    <section id="products" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -69,39 +61,43 @@ const Products = ({ language }: ProductsProps) => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {products.map((product, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.1 * index, ease: 'easeOut' }}
-            >
-              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden">
-                <div className="relative h-64 overflow-hidden flex items-center justify-center">
-                  <img 
-                    src={product.image}
-                    alt={product.name}
-                    className="w-28 h-28 object-cover rounded-xl mb-4 shadow"
-                  />
+            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
+                <img 
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4">
+                  <Badge className="bg-primary text-white">
+                    {language === 'es' ? 'Soluble desde' : 'Soluble from'} {product.solubility}
+                  </Badge>
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-gray-900">{product.name}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 mb-6">{product.description}</p>
-                  <div className="flex flex-wrap justify-center gap-2 mb-2">
+              </div>
+              
+              <CardHeader>
+                <CardTitle className="text-2xl text-gray-900">{product.name}</CardTitle>
+              </CardHeader>
+              
+              <CardContent>
+                <p className="text-gray-600 mb-6">{product.description}</p>
+                
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-3">
+                    {language === 'es' ? 'Aplicaciones:' : 'Applications:'}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
                     {product.applications.map((app, appIndex) => (
                       <Badge key={appIndex} variant="outline" className="text-primary border-primary/30">
                         {app}
                       </Badge>
                     ))}
                   </div>
-                  <span className="text-xs text-gray-400">{language === 'es' ? 'Solubilidad:' : 'Solubility:'} {product.solubility}</span>
-                </CardContent>
-              </Card>
-            </motion.div>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
         
@@ -150,7 +146,7 @@ const Products = ({ language }: ProductsProps) => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
