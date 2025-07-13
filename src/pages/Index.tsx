@@ -20,29 +20,29 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-primary/10">
+      <nav className="fixed top-0 w-full z-50 bg-green-900 border-b border-green-800">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-br from-green-800 to-green-900 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">C</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Cannlabs S.A.</h1>
-              <p className="text-xs text-primary">Natural Extracts Innovation</p>
+              <h1 className="text-xl font-bold text-white">Cannlabs S.A.</h1>
+              <p className="text-xs text-green-200">Natural Extracts Innovation</p>
             </div>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="text-gray-700 hover:text-primary transition-colors">
+            <a href="#about" className="text-white hover:text-green-300 transition-colors">
               {language === 'es' ? 'Quiénes Somos' : 'About Us'}
             </a>
-            <a href="#products" className="text-gray-700 hover:text-primary transition-colors">
+            <a href="#products" className="text-white hover:text-green-300 transition-colors">
               {language === 'es' ? 'Productos' : 'Products'}
             </a>
-            <a href="#technology" className="text-gray-700 hover:text-primary transition-colors">
+            <a href="#technology" className="text-white hover:text-green-300 transition-colors">
               {language === 'es' ? 'Tecnología' : 'Technology'}
             </a>
-            <a href="#contact" className="text-gray-700 hover:text-primary transition-colors">
+            <a href="#contact" className="text-white hover:text-green-300 transition-colors">
               {language === 'es' ? 'Contacto' : 'Contact'}
             </a>
             <LanguageToggle language={language} setLanguage={setLanguage} />

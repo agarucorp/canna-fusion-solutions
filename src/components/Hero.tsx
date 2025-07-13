@@ -13,7 +13,7 @@ const Hero = ({ language }: HeroProps) => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://oaidalleapiprodscus.blob.core.windows.net/private/org-3bQwQwQwQwQwQwQwQwQwQw/user-3bQwQwQwQwQwQwQwQwQwQw/img-3bQwQwQwQwQwQwQwQwQwQw.png?st=2024-05-01T00%3A00%3A00Z&se=2024-06-01T00%3A00%3A00Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image&skoid=3bQwQwQwQwQwQwQwQwQwQw&sktid=3bQwQwQwQwQwQwQwQwQwQw&skt=2024-05-01T00%3A00%3A00Z&ske=2024-06-01T00%3A00%3A00Z&sks=b&skv=2021-08-06&sig=3bQwQwQwQwQwQwQwQwQwQw')`
         }}
       />
       
@@ -57,35 +57,9 @@ const Hero = ({ language }: HeroProps) => {
             {language === 'es' ? 'Contacto Comercial' : 'Commercial Contact'}
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
-          
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg rounded-full backdrop-blur-sm"
-          >
-            {language === 'es' ? 'Descargar Brochure' : 'Download Brochure'}
-          </Button>
         </div>
         
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-300">15+</div>
-            <div className="text-sm text-gray-300">{language === 'es' ? 'Países' : 'Countries'}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-300">6°C</div>
-            <div className="text-sm text-gray-300">{language === 'es' ? 'Solubilidad' : 'Solubility'}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-300">100%</div>
-            <div className="text-sm text-gray-300">{language === 'es' ? 'Natural' : 'Natural'}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-green-300">0</div>
-            <div className="text-sm text-gray-300">{language === 'es' ? 'Agroquímicos' : 'Agrochemicals'}</div>
-          </div>
-        </div>
+        {/* Scroll Indicator */}
       </div>
       
       {/* Scroll Indicator */}
