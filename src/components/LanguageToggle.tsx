@@ -10,7 +10,7 @@ interface LanguageToggleProps {
 const LanguageToggle = ({ language, setLanguage }: LanguageToggleProps) => {
   return (
     <div className="flex items-center space-x-2">
-      <Globe className="h-4 w-4 text-gray-600" />
+      <Globe className="h-4 w-4 text-white" />
       <Button
         variant={language === 'es' ? 'default' : 'outline'}
         size="sm"

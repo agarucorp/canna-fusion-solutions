@@ -43,7 +43,7 @@ const About = ({ language }: AboutProps) => {
           
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="/about-history.jpg"
               alt="Natural Processing Facility"
               className="rounded-2xl shadow-2xl"
             />

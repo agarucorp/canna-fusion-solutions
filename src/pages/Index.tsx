@@ -20,7 +20,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-green-900 border-b border-green-800">
+      <nav className="fixed top-0 w-full z-50 bg-[#113a1a] border-b border-[#0d2a13]">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <div className="w-12 h-12 bg-gradient-to-br from-green-800 to-green-900 rounded-lg flex items-center justify-center">

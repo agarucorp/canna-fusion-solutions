@@ -40,7 +40,7 @@ const Products = ({ language }: ProductsProps) => {
       description: language === 'es' 
         ? 'Extracto de té negro con sabor intenso y color característico. Ideal para bebidas instantáneas.'
         : 'Black tea extract with intense flavor and characteristic color. Ideal for instant beverages.',
-      image: 'https://oaidalleapiprodscus.blob.core.windows.net/private/org-3bQwQwQwQwQwQwQwQwQwQw/user-3bQwQwQwQwQwQwQwQwQwQw/img-3bQwQwQwQwQwQwQwQwQwQw.jpg?st=2024-05-01T00%3A00%3A00Z&se=2024-06-01T00%3A00%3A00Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image&skoid=3bQwQwQwQwQwQwQwQwQwQw&sktid=3bQwQwQwQwQwQwQwQwQwQw&skt=2024-05-01T00%3A00%3A00Z&ske=2024-06-01T00%3A00%3A00Z&sks=b&skv=2021-08-06&sig=3bQwQwQwQwQwQwQwQwQwQw',
+      image: '/black-tea.jpg',
       applications: language === 'es' ? ['Té Instantáneo', 'Bebidas RTD', 'Mezclas', 'Saborizantes'] : ['Instant Tea', 'RTD Beverages', 'Blends', 'Flavorings'],
       solubility: '10°C'
     }
