@@ -1,3 +1,4 @@
+
 import { Globe, Leaf, Award, Factory } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -42,8 +43,8 @@ const About = ({ language }: AboutProps) => {
           
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Yerba Mate and Tea Leaves"
+              src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Natural Processing Facility"
               className="rounded-2xl shadow-2xl"
             />
           </div>
