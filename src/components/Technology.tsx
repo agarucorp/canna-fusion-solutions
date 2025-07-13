@@ -65,18 +65,24 @@ const Technology = ({ language }: TechnologyProps) => {
         </div>
         {/* Bloque 1: Spray Dry */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Spray Dry Industrial
-            </h3>
-            <p className="text-gray-700 text-lg mb-4">
+          <div className="text-left">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              {language === 'es' ? 'Spray Dry Industrial' : 'Industrial Spray Dry'}
+            </h2>
+            <p className="text-lg text-gray-700 mb-4">
               {language === 'es'
-                ? 'Nuestro proceso industrial de spray dry garantiza la preservación de las propiedades funcionales y sensoriales de la yerba mate, logrando un extracto soluble de alta calidad y larga vida útil.'
-                : 'Our industrial spray dry process preserves the functional and sensory properties of yerba mate, resulting in a high-quality, long shelf-life soluble extract.'}
+                ? 'Nuestro proceso industrial de spray dry garantiza la preservación de compuestos activos, máxima estabilidad y vida útil extendida en todos nuestros extractos. La tecnología de secado por aspersión permite obtener polvos solubles, estables y de alta pureza, ideales para aplicaciones industriales exigentes.'
+                : 'Our industrial spray dry process ensures the preservation of active compounds, maximum stability, and extended shelf life in all our extracts. Spray drying technology produces soluble, stable, and high-purity powders, ideal for demanding industrial applications.'}
             </p>
+            <ul className="space-y-2 mt-6">
+              <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Preservación de propiedades nutricionales y funcionales' : 'Preservation of nutritional and functional properties'}</li>
+              <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Alta estabilidad y vida útil prolongada' : 'High stability and extended shelf life'}</li>
+              <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Polvos solubles y de alta pureza' : 'Soluble and high-purity powders'}</li>
+              <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Procesos certificados y controlados' : 'Certified and controlled processes'}</li>
+            </ul>
           </div>
           <div className="flex justify-center">
-            <img src="/spray-dry.jpg" alt="Spray Dry Industrial" className="rounded-2xl shadow-2xl max-w-lg w-full object-cover" />
+            <img src="/process.jpg" alt="Spray Dry Industrial" className="rounded-2xl shadow-2xl max-w-lg w-full object-cover" />
           </div>
         </div>
         {/* Bloque 2: I+D */}
@@ -101,17 +107,17 @@ const Technology = ({ language }: TechnologyProps) => {
         </div>
       </div>
       {/* Certificaciones alimenticias */}
-      <div className="text-center mb-6">
-        <span className="uppercase tracking-widest text-xs text-green-700 font-semibold block mb-1">
+      <div className="text-center mb-6 mt-20">
+        <span className="uppercase tracking-widest text-2xl text-green-700 font-bold block mb-2">
           {language === 'es' ? 'Certificaciones' : 'Certifications'}
         </span>
-        <span className="text-base text-gray-600">
+        <span className="text-lg text-gray-600">
           {language === 'es'
             ? 'Contamos con múltiples certificados de confianza para nuestros productos.'
             : 'We hold multiple trusted certifications for our products.'}
         </span>
       </div>
-      <div className="mt-16">
+      <div className="mt-20">
         <div className="flex flex-wrap justify-center items-center gap-8">
           {/* ISO 22000 */}
           <img src="/certificaciones/iso22000.png" alt="ISO 22000" className="h-10 w-auto" />
