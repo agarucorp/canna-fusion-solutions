@@ -65,16 +65,10 @@ const Technology = ({ language }: TechnologyProps) => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {language === 'es' ? 'Tecnología' : 'Technology'}
           </h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-4xl mx-auto">
             {language === 'es'
-              ? 'Innovación canadiense aplicada a la excelencia en extractos.'
-              : 'Canadian innovation applied to extract excellence.'}
-          </p>
-          <p className="text-base md:text-lg max-w-2xl mx-auto mt-6 text-gray-700">
-            {language === 'es'
-              ? <>Nuestra planta y procesos integran <span className="text-green-700 font-semibold">tecnología canadiense</span> de última generación, asegurando calidad, seguridad y trazabilidad en cada lote. La transferencia tecnológica y el know-how de Canadá nos posicionan como referentes en extractos herbales premium.</>
-              : <>Our facility and processes incorporate <span className="text-green-700 font-semibold">cutting-edge Canadian technology</span>, ensuring quality, safety, and traceability in every batch. Technology transfer and Canadian know-how make us leaders in premium herbal extracts.</>
-            }
+              ? 'Nuestra planta y procesos integran tecnología canadiense de última generación, asegurando calidad, seguridad y trazabilidad en cada lote. La transferencia tecnológica y el know-how de Canadá nos posicionan como referentes en extractos herbales premium.'
+              : 'Our facility and processes incorporate cutting-edge Canadian technology, ensuring quality, safety, and traceability in every batch. Technology transfer and Canadian know-how make us leaders in premium herbal extracts.'}
           </p>
         </div>
         {/* Bloque 1: Spray Dry */}
@@ -82,7 +76,7 @@ const Technology = ({ language }: TechnologyProps) => {
           className="grid md:grid-cols-2 gap-12 items-center"
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <div className="text-left">
@@ -108,7 +102,7 @@ const Technology = ({ language }: TechnologyProps) => {
               className="rounded-2xl shadow-2xl max-w-lg w-full object-cover"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             />
           </div>
@@ -118,7 +112,7 @@ const Technology = ({ language }: TechnologyProps) => {
           className="grid md:grid-cols-2 gap-12 items-start"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <div className="flex justify-start md:pl-0 pl-0 order-1 md:order-none">

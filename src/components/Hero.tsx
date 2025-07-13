@@ -8,7 +8,7 @@ interface HeroProps {
 
 const Hero = ({ language }: HeroProps) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-2 sm:px-4">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-2 sm:px-4">
       {/* Background Image - Yerba Mate Plantation */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -17,6 +17,11 @@ const Hero = ({ language }: HeroProps) => {
         }}
       />
       
+      {/* Logo centrado en mobile */}
+      <div className="w-full flex justify-center sm:justify-start mb-4">
+        <img src="/logo-cannlabs.png" alt="CannLabs Logo" className="h-12 w-auto object-contain opacity-90" />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 text-center text-white px-2 sm:px-4 max-w-7xl mx-auto">
         
