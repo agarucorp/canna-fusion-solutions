@@ -18,8 +18,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-[#0d2a13] border-b border-[#0a1e0c] h-16">
-        <div className="w-full max-w-none px-16 py-4 flex justify-between items-center">
+      <nav className="fixed top-0 w-full z-50 bg-[#0d2a13] border-b border-[#0a1e0c] min-h-[64px] flex items-center">
+        <div className="w-full max-w-none px-16 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <div className="h-12 w-auto flex items-center justify-start">
               <img src="/logo-cannlabs.png" alt="CannLabs Logo" className="h-10 w-auto object-contain" />

@@ -186,56 +186,6 @@ const Contact = ({ language }: ContactProps) => {
               </CardContent>
             </Card>
             
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-xl text-gray-900 flex items-center">
-                  <Clock className="mr-2 h-5 w-5 text-green-600" />
-                  {language === 'es' ? 'Horarios de Atención' : 'Business Hours'}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">
-                      {language === 'es' ? 'Lunes - Viernes' : 'Monday - Friday'}
-                    </span>
-                    <span className="font-medium text-gray-900">8:00 - 17:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">
-                      {language === 'es' ? 'Sábados' : 'Saturday'}
-                    </span>
-                    <span className="font-medium text-gray-900">8:00 - 12:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">
-                      {language === 'es' ? 'Domingos' : 'Sunday'}
-                    </span>
-                    <span className="font-medium text-gray-900">
-                      {language === 'es' ? 'Cerrado' : 'Closed'}
-                    </span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 shadow-lg bg-green-50">
-              <CardContent className="p-6 text-center">
-                <Globe className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                <h3 className="font-bold text-gray-900 mb-2">
-                  {language === 'es' ? '¿Necesitas un distribuidor local?' : 'Need a local distributor?'}
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  {language === 'es' 
-                    ? 'Contamos con una red de distribuidores en América, Europa y Asia.'
-                    : 'We have a network of distributors in America, Europe and Asia.'
-                  }
-                </p>
-                <Button variant="outline" className="w-full border-green-600 text-green-700 hover:bg-green-100">
-                  {language === 'es' ? 'Ver Distribuidores' : 'View Distributors'}
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>
