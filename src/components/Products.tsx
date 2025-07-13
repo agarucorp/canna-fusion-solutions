@@ -1,6 +1,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from 'framer-motion';
 
 interface ProductsProps {
   language: string;
@@ -63,41 +64,46 @@ const Products = ({ language }: ProductsProps) => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {products.map((product, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute top-4 right-4">
-                  <Badge className="bg-primary text-white">
-                    {language === 'es' ? 'Soluble desde' : 'Soluble from'} {product.solubility}
-                  </Badge>
-                </div>
-              </div>
-              
-              <CardHeader>
-                <CardTitle className="text-2xl text-gray-900">{product.name}</CardTitle>
-              </CardHeader>
-              
-              <CardContent>
-                <p className="text-gray-600 mb-6">{product.description}</p>
-                
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-3">
-                    {language === 'es' ? 'Aplicaciones:' : 'Applications:'}
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {product.applications.map((app, appIndex) => (
-                      <Badge key={appIndex} variant="outline" className="text-primary border-primary/30">
-                        {app}
-                      </Badge>
-                    ))}
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.1 * index, ease: 'easeOut' }}
+            >
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-primary text-white">
+                      {language === 'es' ? 'Soluble desde' : 'Soluble from'} {product.solubility}
+                    </Badge>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+                <CardHeader>
+                  <CardTitle className="text-2xl text-gray-900">{product.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-6">{product.description}</p>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">
+                      {language === 'es' ? 'Aplicaciones:' : 'Applications:'}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {product.applications.map((app, appIndex) => (
+                        <Badge key={appIndex} variant="outline" className="text-primary border-primary/30">
+                          {app}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
         
