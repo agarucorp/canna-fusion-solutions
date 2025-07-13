@@ -53,6 +53,11 @@ const Technology = ({ language }: TechnologyProps) => {
   return (
     <section id="technology" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 space-y-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            {language === 'es' ? 'Tecnología' : 'Technology'}
+          </h2>
+        </div>
         {/* Bloque 1: Spray Dry */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-left">
@@ -77,7 +82,7 @@ const Technology = ({ language }: TechnologyProps) => {
         </div>
         {/* Bloque 2: I+D */}
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="flex justify-center order-1 md:order-none">
+          <div className="flex justify-start md:pl-0 pl-0 order-1 md:order-none">
             <img src="/spray-dry.jpg" alt="I+D y Formulación" className="rounded-2xl shadow-2xl max-w-md w-full object-cover" />
           </div>
           <div className="text-left order-2 md:order-none">
@@ -93,6 +98,66 @@ const Technology = ({ language }: TechnologyProps) => {
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Desarrollo de productos exclusivos y soporte técnico' : 'Development of exclusive products and technical support'}</li>
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Innovación continua en I+D' : 'Continuous innovation in R&D'}</li>
             </ul>
+          </div>
+        </div>
+      </div>
+      {/* Certificaciones alimenticias */}
+      <div className="mt-16">
+        <div className="flex flex-wrap justify-center items-center gap-8">
+          {/* ISO 22000 */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">📄</span>
+            <span className="text-sm mt-2">ISO 22000</span>
+          </div>
+          {/* HACCP */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">🛡️</span>
+            <span className="text-sm mt-2">HACCP</span>
+          </div>
+          {/* FSSC 22000 */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">🌐</span>
+            <span className="text-sm mt-2">FSSC 22000</span>
+          </div>
+          {/* BRCGS */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">🇬🇧</span>
+            <span className="text-sm mt-2">BRCGS</span>
+          </div>
+          {/* IFS */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">🏷️</span>
+            <span className="text-sm mt-2">IFS</span>
+          </div>
+          {/* Kosher */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">✡️</span>
+            <span className="text-sm mt-2">Kosher</span>
+          </div>
+          {/* Halal */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">🕌</span>
+            <span className="text-sm mt-2">Halal</span>
+          </div>
+          {/* Orgánico */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">��</span>
+            <span className="text-sm mt-2">Orgánico</span>
+          </div>
+          {/* Non-GMO */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">🚫🌽</span>
+            <span className="text-sm mt-2">Non-GMO</span>
+          </div>
+          {/* Gluten Free */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">🚫🌾</span>
+            <span className="text-sm mt-2">Gluten Free</span>
+          </div>
+          {/* ISO 9001 */}
+          <div className="flex flex-col items-center">
+            <span className="text-4xl">📋</span>
+            <span className="text-sm mt-2">ISO 9001</span>
           </div>
         </div>
       </div>

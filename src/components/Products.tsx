@@ -31,7 +31,7 @@ const Products = ({ language }: ProductsProps) => {
       description: language === 'es' 
         ? 'Extracto concentrado de té verde con alto contenido de antioxidantes. Solubilidad excepcional.'
         : 'Concentrated green tea extract with high antioxidant content. Exceptional solubility.',
-      image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      image: '/te-verde.jpg',
       applications: language === 'es' ? ['Cosmética', 'Suplementos', 'Bebidas', 'Aromaterapia'] : ['Cosmetics', 'Supplements', 'Beverages', 'Aromatherapy'],
       solubility: '6°C'
     },

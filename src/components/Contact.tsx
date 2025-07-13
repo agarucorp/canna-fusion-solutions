@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, Clock, Globe } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Clock, Globe, Whatsapp } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -46,15 +46,15 @@ const Contact = ({ language }: ContactProps) => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 h-full">
           {/* Contact Form */}
-          <Card className="border-0 shadow-lg w-full max-w-xl mx-auto">
+          <Card className="border-0 shadow-lg w-full max-w-xl mx-auto h-full flex flex-col">
             <CardHeader>
               <CardTitle className="text-2xl text-gray-900">
                 {language === 'es' ? 'Solicitar Información' : 'Request Information'}
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex-1 flex flex-col justify-between">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -138,19 +138,18 @@ const Contact = ({ language }: ContactProps) => {
           </Card>
           
           {/* Contact Info */}
-          <div className="space-y-6">
-            <Card className="border-0 shadow-lg w-full max-w-xl mx-auto">
+          <div className="space-y-6 h-full">
+            <Card className="border-0 shadow-lg w-full max-w-xl mx-auto h-full flex flex-col">
               <CardHeader>
                 <CardTitle className="text-xl text-gray-900 flex items-center">
                   <Phone className="mr-2 h-5 w-5 text-green-600" />
                   {language === 'es' ? 'Contacto Directo' : 'Direct Contact'}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="flex-1 flex flex-col justify-between space-y-4">
                 {/* WhatsApp Contact */}
                 <div className="flex items-center space-x-3">
-                  {/* If you have a WhatsApp icon, use it here. Otherwise, use Globe as a placeholder. */}
-                  <Globe className="h-5 w-5 text-green-600" />
+                  <Whatsapp className="h-5 w-5 text-green-600" />
                   <a
                     href="https://wa.me/595984299188"
                     target="_blank"
