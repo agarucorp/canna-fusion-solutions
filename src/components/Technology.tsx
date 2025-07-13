@@ -76,7 +76,7 @@ const Technology = ({ language }: TechnologyProps) => {
           className="grid md:grid-cols-2 gap-12 items-center"
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.05 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <div className="text-left">
@@ -102,7 +102,7 @@ const Technology = ({ language }: TechnologyProps) => {
               className="rounded-2xl shadow-2xl max-w-lg w-full object-cover"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.05 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             />
           </div>
@@ -112,7 +112,7 @@ const Technology = ({ language }: TechnologyProps) => {
           className="grid md:grid-cols-2 gap-12 items-start"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.05 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <div className="flex justify-start md:pl-0 pl-0 order-1 md:order-none">
