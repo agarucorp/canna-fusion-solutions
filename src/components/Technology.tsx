@@ -70,6 +70,12 @@ const Technology = ({ language }: TechnologyProps) => {
               ? 'Innovación canadiense aplicada a la excelencia en extractos.'
               : 'Canadian innovation applied to extract excellence.'}
           </p>
+          <p className="text-base md:text-lg max-w-2xl mx-auto mt-6 text-gray-700">
+            {language === 'es'
+              ? <>Nuestra planta y procesos integran <span className="text-green-700 font-semibold">tecnología canadiense</span> de última generación, asegurando calidad, seguridad y trazabilidad en cada lote. La transferencia tecnológica y el know-how de Canadá nos posicionan como referentes en extractos herbales premium.</>
+              : <>Our facility and processes incorporate <span className="text-green-700 font-semibold">cutting-edge Canadian technology</span>, ensuring quality, safety, and traceability in every batch. Technology transfer and Canadian know-how make us leaders in premium herbal extracts.</>
+            }
+          </p>
         </div>
         {/* Bloque 1: Spray Dry */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
