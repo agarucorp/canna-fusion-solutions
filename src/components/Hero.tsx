@@ -20,17 +20,17 @@ const Hero = ({ language }: HeroProps) => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-7xl mx-auto">
         
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
           {language === 'es' ? (
             <>
-              Fusionamos <span className="text-yellow-400">tecnología canadiense</span><br />
-              y <span className="text-yellow-400">naturaleza paraguaya</span><br />
+              Fusionamos tecnología canadiense<br />
+              y naturaleza paraguaya<br />
               para nutrir al mundo
             </>
           ) : (
             <>
-              We fuse <span className="text-yellow-400">Canadian technology</span><br />
-              with <span className="text-yellow-400">Paraguayan nature</span><br />
+              We fuse Canadian technology<br />
+              with Paraguayan nature<br />
               to nourish the world
             </>
           )}

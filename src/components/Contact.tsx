@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, Clock, Globe, Whatsapp } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Clock, Globe } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -149,7 +149,12 @@ const Contact = ({ language }: ContactProps) => {
               <CardContent className="flex-1 flex flex-col justify-between space-y-4">
                 {/* WhatsApp Contact */}
                 <div className="flex items-center space-x-3">
-                  <Whatsapp className="h-5 w-5 text-green-600" />
+                   <span className="inline-block align-middle">
+                     <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <circle cx="16" cy="16" r="16" fill="#25D366"/>
+                       <path d="M23.472 19.339c-.355-.177-2.104-1.037-2.43-1.155-.326-.119-.563-.177-.8.177-.237.355-.914 1.155-1.122 1.392-.208.237-.414.266-.769.089-.355-.178-1.5-.553-2.858-1.763-1.056-.943-1.77-2.104-1.98-2.459-.208-.355-.022-.546.156-.723.16-.159.355-.414.533-.622.178-.208.237-.355.355-.592.119-.237.06-.444-.03-.622-.089-.178-.8-1.924-1.096-2.637-.289-.693-.583-.599-.8-.61-.208-.009-.444-.011-.68-.011-.237 0-.622.089-.948.444-.326.355-1.24 1.211-1.24 2.955 0 1.744 1.269 3.429 1.446 3.666.178.237 2.5 3.82 6.055 5.209.846.291 1.505.464 2.021.594.849.216 1.622.186 2.233.113.682-.08 2.104-.859 2.402-1.689.297-.83.297-1.541.208-1.689-.089-.148-.326-.237-.681-.414z" fill="#fff"/>
+                     </svg>
+                   </span>
                   <a
                     href="https://wa.me/595984299188"
                     target="_blank"
