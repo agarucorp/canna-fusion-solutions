@@ -8,7 +8,7 @@ interface HeroProps {
 
 const Hero = ({ language }: HeroProps) => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-2 sm:px-4">
       {/* Background Image - Yerba Mate Plantation */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -18,9 +18,9 @@ const Hero = ({ language }: HeroProps) => {
       />
       
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-7xl mx-auto">
+      <div className="relative z-10 text-center text-white px-2 sm:px-4 max-w-7xl mx-auto">
         
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white break-words">
           {language === 'es' ? (
             <>
               Fusionamos tecnología canadiense<br />
@@ -36,17 +36,17 @@ const Hero = ({ language }: HeroProps) => {
           )}
         </h1>
         
-        <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-4xl mx-auto">
+        <p className="text-base xs:text-lg sm:text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl sm:max-w-4xl mx-auto">
           {language === 'es' 
             ? 'Extractos herbales solubles de alta calidad para mercados globales. Yerba mate, stevia y té con tecnología spray-dry avanzada.'
             : 'High-quality soluble herbal extracts for global markets. Yerba mate, stevia and tea with advanced spray-dry technology.'
           }
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg rounded-full group"
+            className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full group"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {language === 'es' ? 'Contacto Comercial' : 'Commercial Contact'}
