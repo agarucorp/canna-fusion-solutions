@@ -59,8 +59,8 @@ const Technology = ({ language }: TechnologyProps) => {
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             {language === 'es'
-              ? 'Innovación y calidad en cada proceso.'
-              : 'Innovation and quality in every process.'}
+              ? 'Innovación canadiense aplicada a la excelencia en extractos.'
+              : 'Canadian innovation applied to extract excellence.'}
           </p>
         </div>
         {/* Bloque 1: Spray Dry */}

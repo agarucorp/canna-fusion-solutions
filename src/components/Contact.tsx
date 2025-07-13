@@ -146,7 +146,7 @@ const Contact = ({ language }: ContactProps) => {
                   {language === 'es' ? 'Contacto Directo' : 'Direct Contact'}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col gap-2">
+              <CardContent className="flex flex-col gap-3">
                 {/* WhatsApp Contact */}
                 <div className="flex items-center space-x-3">
                    <span className="inline-block align-middle">
@@ -193,6 +193,19 @@ const Contact = ({ language }: ContactProps) => {
                       {language === 'es' ? 'Acceso a puertos internacionales' : 'Access to international ports'}
                     </p>
                   </div>
+                </div>
+                {/* Google Maps */}
+                <div className="w-full mt-4 rounded-xl overflow-hidden" style={{height: '180px'}}>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.073964479836!2d-57.5891496!3d-25.2757206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da6198536dc43%3A0xa98b59c3f2cddc74!2sLas%20Lomas%2C%20Asunci%C3%B3n%2C%20Paraguay!5e0!3m2!1ses-419!2spy!4v1689273600000!5m2!1ses-419!2spy"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Ubicación en Google Maps"
+                  ></iframe>
                 </div>
               </CardContent>
             </Card>
