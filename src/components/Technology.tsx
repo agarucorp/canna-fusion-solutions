@@ -52,13 +52,9 @@ const Technology = ({ language }: TechnologyProps) => {
   ];
 
   return (
-    <motion.section
+    <section
       id="technology"
       className="py-20 bg-gray-50"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       <div className="mx-auto px-4 space-y-24">
         <div className="text-center mb-16">
@@ -169,7 +165,7 @@ const Technology = ({ language }: TechnologyProps) => {
           <img src="/certificaciones/iso9001.png" alt="ISO 9001" className="h-10 w-auto" />
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
