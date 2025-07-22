@@ -8,6 +8,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Products from "@/components/Products";
 import Technology from "@/components/Technology";
+import Sustainability from "@/components/Sustainability";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import LanguageToggle from "@/components/LanguageToggle";
@@ -36,6 +37,9 @@ const Index = () => {
             <a href="#technology" className="text-white hover:text-green-300 transition-colors">
               {language === 'es' ? 'Tecnología' : 'Technology'}
             </a>
+            <a href="#sustainability" className="text-white hover:text-green-300 transition-colors">
+              {language === 'es' ? 'Sostenibilidad' : 'Sustainability'}
+            </a>
             <a href="#contact" className="text-white hover:text-green-300 transition-colors">
               {language === 'es' ? 'Contacto' : 'Contact'}
             </a>
@@ -50,6 +54,7 @@ const Index = () => {
         <About language={language} />
         <Products language={language} />
         <Technology language={language} />
+        <Sustainability language={language} />
         <Contact language={language} />
       </main>
 

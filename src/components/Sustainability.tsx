@@ -1,182 +1,139 @@
 
-import { Leaf, Droplets, Recycle, Heart } from 'lucide-react';
+import { Leaf, Users, Globe } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from 'framer-motion';
 
 interface SustainabilityProps {
   language: string;
 }
 
 const Sustainability = ({ language }: SustainabilityProps) => {
-  const commitments = [
+  const principles = [
+    {
+      icon: Globe,
+      title: language === 'es' ? 'Cero Emisiones Netas' : 'Net Zero Emissions',
+      description: language === 'es' 
+        ? 'Nuestro compromiso es reducir las emisiones de CO2 en nuestros procesos de spray-dry en un 50% para 2030 y alcanzar cero emisiones netas para 2040.'
+        : 'Our commitment is to reduce CO2 emissions in our spray-dry processes by 50% by 2030 and achieve net zero emissions by 2040.',
+      color: 'bg-green-600',
+      borderColor: 'border-green-600'
+    },
     {
       icon: Leaf,
-      title: language === 'es' ? 'Agricultura Sin Agroquímicos' : 'Agrochemical-Free Agriculture',
+      title: language === 'es' ? 'Suministro Sostenible' : 'Sustainable Supply',
       description: language === 'es' 
-        ? 'Trabajamos exclusivamente con productores que practican agricultura orgánica y sostenible, garantizando materias primas libres de pesticidas y químicos.'
-        : 'We work exclusively with producers who practice organic and sustainable agriculture, guaranteeing raw materials free from pesticides and chemicals.',
-      impact: language === 'es' ? '100% libre de agroquímicos' : '100% agrochemical-free'
+        ? 'Garantizamos el abastecimiento ético y sostenible de yerba mate, stevia y té de Paraguay, promoviendo prácticas agrícolas responsables.'
+        : 'We ensure ethical and sustainable sourcing of yerba mate, stevia and tea from Paraguay, promoting responsible agricultural practices.',
+      color: 'bg-orange-500',
+      borderColor: 'border-orange-500'
     },
     {
-      icon: Droplets,
-      title: language === 'es' ? 'Gestión Responsable del Agua' : 'Responsible Water Management',
+      icon: Users,
+      title: language === 'es' ? 'Nuestra Gente' : 'Our People',
       description: language === 'es' 
-        ? 'Implementamos sistemas de reciclaje y tratamiento de agua en nuestros procesos industriales, minimizando el impacto ambiental.'
-        : 'We implement water recycling and treatment systems in our industrial processes, minimizing environmental impact.',
-      impact: language === 'es' ? '70% reducción consumo' : '70% consumption reduction'
-    },
-    {
-      icon: Recycle,
-      title: language === 'es' ? 'Economía Circular' : 'Circular Economy',
-      description: language === 'es' 
-        ? 'Aprovechamos los subproductos de nuestros procesos para crear valor agregado, reduciendo desperdicios y maximizando la eficiencia.'
-        : 'We leverage by-products from our processes to create added value, reducing waste and maximizing efficiency.',
-      impact: language === 'es' ? '95% aprovechamiento' : '95% utilization'
-    },
-    {
-      icon: Heart,
-      title: language === 'es' ? 'Compromiso Social' : 'Social Commitment',
-      description: language === 'es' 
-        ? 'Apoyamos a las comunidades locales generando empleo digno y promoviendo el desarrollo sostenible de la región.'
-        : 'We support local communities by generating decent employment and promoting sustainable development in the region.',
-      impact: language === 'es' ? '200+ empleos locales' : '200+ local jobs'
+        ? 'Valoramos y tratamos justamente a nuestro equipo paraguayo, fomentando el crecimiento profesional y el desarrollo de talento local.'
+        : 'We value and treat our Paraguayan team fairly, fostering professional growth and local talent development.',
+      color: 'bg-pink-500',
+      borderColor: 'border-pink-500'
     }
   ];
 
   return (
-    <section className="py-20 bg-green-50">
-      <div className="container mx-auto px-4">
+    <section
+      id="sustainability"
+      className="py-20 bg-white"
+    >
+      <div className="mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            {language === 'es' ? 'Sustentabilidad' : 'Sustainability'}
+            {language === 'es' ? 'Sostenibilidad' : 'Sustainability'}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {language === 'es' 
-              ? 'Nuestro compromiso con el medio ambiente y las comunidades locales es fundamental en cada etapa de nuestros procesos.'
-              : 'Our commitment to the environment and local communities is fundamental at every stage of our processes.'
-            }
+          <p className="text-lg text-gray-500 max-w-4xl mx-auto">
+            {language === 'es'
+              ? 'En CannLabs, la sostenibilidad es el corazón de nuestro negocio. Integramos prácticas responsables en cada aspecto de nuestra operación, desde el abastecimiento hasta la producción.'
+              : 'At CannLabs, sustainability is at the heart of our business. We integrate responsible practices in every aspect of our operation, from sourcing to production.'}
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {commitments.map((commitment, index) => (
-            <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
-              <CardHeader>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <commitment.icon className="h-6 w-6 text-green-600" />
+
+        {/* Principios de Sostenibilidad */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {principles.map((principle, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: index * 0.2, ease: 'easeOut' }}
+            >
+              <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <CardHeader className={`${principle.color} text-white text-center pb-4`}>
+                  <div className="flex justify-center mb-4">
+                    <div className={`w-16 h-16 rounded-full bg-white flex items-center justify-center ${principle.borderColor} border-2`}>
+                      <principle.icon className="w-8 h-8 text-gray-700" />
+                    </div>
                   </div>
-                  <div>
-                    <CardTitle className="text-xl text-gray-900">{commitment.title}</CardTitle>
-                    <p className="text-sm text-green-600 font-semibold">{commitment.impact}</p>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">{commitment.description}</p>
-              </CardContent>
-            </Card>
+                  <CardTitle className="text-xl font-bold uppercase tracking-wide">
+                    {principle.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-6">
+                  <p className="text-gray-700 text-center leading-relaxed">
+                    {principle.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
-        
-        {/* Environmental Stats */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            {language === 'es' ? 'Nuestro Impacto Ambiental' : 'Our Environmental Impact'}
-          </h3>
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🌱</span>
-              </div>
-              <h4 className="text-2xl font-bold text-green-600 mb-2">0</h4>
-              <p className="text-gray-600 text-sm">
-                {language === 'es' ? 'Agroquímicos utilizados' : 'Agrochemicals used'}
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">💧</span>
-              </div>
-              <h4 className="text-2xl font-bold text-blue-600 mb-2">70%</h4>
-              <p className="text-gray-600 text-sm">
-                {language === 'es' ? 'Reducción uso de agua' : 'Water usage reduction'}
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">♻️</span>
-              </div>
-              <h4 className="text-2xl font-bold text-purple-600 mb-2">95%</h4>
-              <p className="text-gray-600 text-sm">
-                {language === 'es' ? 'Aprovechamiento residuos' : 'Waste utilization'}
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🤝</span>
-              </div>
-              <h4 className="text-2xl font-bold text-orange-600 mb-2">200+</h4>
-              <p className="text-gray-600 text-sm">
-                {language === 'es' ? 'Empleos locales' : 'Local jobs'}
-              </p>
-            </div>
+
+        {/* Sección con imagen */}
+        <motion.div
+          className="grid md:grid-cols-2 gap-12 items-center"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <div className="text-left">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              {language === 'es' ? 'Gestión de Afluentes' : 'Effluent Management'}
+            </h3>
+            <p className="text-lg text-gray-700 mb-6">
+              {language === 'es'
+                ? 'Implementamos sistemas avanzados de tratamiento de afluentes que garantizan que el agua utilizada en nuestros procesos sea devuelta al medio ambiente en condiciones óptimas, cumpliendo con los más altos estándares ambientales.'
+                : 'We implement advanced effluent treatment systems that ensure water used in our processes is returned to the environment in optimal conditions, meeting the highest environmental standards.'}
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-center text-base text-gray-700">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                {language === 'es' ? 'Tratamiento biológico avanzado' : 'Advanced biological treatment'}
+              </li>
+              <li className="flex items-center text-base text-gray-700">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                {language === 'es' ? 'Cumplimiento de normativas ambientales' : 'Environmental regulation compliance'}
+              </li>
+              <li className="flex items-center text-base text-gray-700">
+                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                {language === 'es' ? 'Monitoreo continuo de calidad' : 'Continuous quality monitoring'}
+              </li>
+            </ul>
           </div>
-        </div>
-        
-        {/* Certifications */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8">
-            {language === 'es' ? 'Certificaciones y Compromisos' : 'Certifications & Commitments'}
-          </h3>
-          
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Card className="border-2 border-green-200 bg-white">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Leaf className="h-8 w-8 text-green-600" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2">
-                  {language === 'es' ? 'Orgánico Certificado' : 'Certified Organic'}
-                </h4>
-                <p className="text-sm text-gray-600">
-                  {language === 'es' ? 'Materias primas 100% orgánicas' : '100% organic raw materials'}
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-2 border-blue-200 bg-white">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Droplets className="h-8 w-8 text-blue-600" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2">
-                  {language === 'es' ? 'ISO 14001' : 'ISO 14001'}
-                </h4>
-                <p className="text-sm text-gray-600">
-                  {language === 'es' ? 'Gestión ambiental certificada' : 'Certified environmental management'}
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-2 border-purple-200 bg-white">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="h-8 w-8 text-purple-600" />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2">
-                  {language === 'es' ? 'Comercio Justo' : 'Fair Trade'}
-                </h4>
-                <p className="text-sm text-gray-600">
-                  {language === 'es' ? 'Prácticas comerciales éticas' : 'Ethical business practices'}
-                </p>
-              </CardContent>
-            </Card>
+          <div className="flex justify-center">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            >
+              <img
+                src="/afluentes.jpg"
+                alt={language === 'es' ? 'Gestión de Afluentes' : 'Effluent Management'}
+                className="rounded-2xl shadow-2xl max-w-lg w-full object-cover"
+              />
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
