@@ -1,5 +1,4 @@
 
-import { Globe, Leaf, Award, Factory } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from 'framer-motion';
 
@@ -30,7 +29,7 @@ const About = ({ language }: AboutProps) => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               {language === 'es' ? 'Nuestra Historia' : 'Our Story'}
@@ -43,8 +42,14 @@ const About = ({ language }: AboutProps) => {
             </p>
             <p className="text-gray-600 mb-6">
               {language === 'es' 
-                ? 'Nuestro enfoque en la sostenibilidad y la calidad nos ha posicionado como líderes regionales en la producción de extractos solubles para mercados globales exigentes.'
-                : 'Our focus on sustainability and quality has positioned us as regional leaders in the production of soluble extracts for demanding global markets.'
+                ? 'Nuestro enfoque en la sostenibilidad y la calidad nos ha posicionado como líderes regionales en la producción de extractos solubles para mercados globales exigentes. Desarrollamos productos para USA, Irlanda, Alemania, Paraguay, Argentina y multinacionales con presencia global.'
+                : 'Our focus on sustainability and quality has positioned us as regional leaders in the production of soluble extracts for demanding global markets. We develop products for USA, Ireland, Germany, Paraguay, Argentina and multinational companies with global presence.'
+              }
+            </p>
+            <p className="text-gray-600 mb-6">
+              {language === 'es' 
+                ? 'Utilizamos tecnología spray-dry de vanguardia y procesos avanzados para garantizar estándares internacionales de calidad. Nuestros productos son 100% naturales, sin agroquímicos, solo naturaleza pura transformada con la más alta tecnología canadiense.'
+                : 'We use cutting-edge spray-dry technology and advanced processes to ensure international quality standards. Our products are 100% natural, without agrochemicals, only pure nature transformed with the highest Canadian technology.'
               }
             </p>
           </div>
@@ -60,64 +65,6 @@ const About = ({ language }: AboutProps) => {
               transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             />
           </div>
-        </div>
-        
-        <div className="grid md:grid-cols-4 gap-6">
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Globe className="h-6 w-6 text-primary" />
-              </div>
-              <h4 className="font-bold text-gray-900 mb-2">
-                {language === 'es' ? 'Alcance Global' : 'Global Reach'}
-              </h4>
-              <p className="text-gray-600 text-sm">
-                {language === 'es' ? 'Exportamos a América del Norte, Europa y Asia' : 'We export to North America, Europe and Asia'}
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Leaf className="h-6 w-6 text-primary" />
-              </div>
-              <h4 className="font-bold text-gray-900 mb-2">
-                {language === 'es' ? '100% Natural' : '100% Natural'}
-              </h4>
-              <p className="text-gray-600 text-sm">
-                {language === 'es' ? 'Sin agroquímicos, solo naturaleza pura' : 'No agrochemicals, only pure nature'}
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Award className="h-6 w-6 text-primary" />
-              </div>
-              <h4 className="font-bold text-gray-900 mb-2">
-                {language === 'es' ? 'Calidad Premium' : 'Premium Quality'}
-              </h4>
-              <p className="text-gray-600 text-sm">
-                {language === 'es' ? 'Estándares internacionales de calidad' : 'International quality standards'}
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardContent className="p-6 text-center">
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Factory className="h-6 w-6 text-primary" />
-              </div>
-              <h4 className="font-bold text-gray-900 mb-2">
-                {language === 'es' ? 'Tecnología Avanzada' : 'Advanced Technology'}
-              </h4>
-              <p className="text-gray-600 text-sm">
-                {language === 'es' ? 'Spray-dry y procesos de vanguardia' : 'Spray-dry and cutting-edge processes'}
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </motion.section>

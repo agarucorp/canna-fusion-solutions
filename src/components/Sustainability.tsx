@@ -15,8 +15,8 @@ const Sustainability = ({ language }: SustainabilityProps) => {
       description: language === 'es' 
         ? 'Nuestro compromiso es reducir las emisiones de CO2 en nuestros procesos de spray-dry en un 50% para 2030 y alcanzar cero emisiones netas para 2040.'
         : 'Our commitment is to reduce CO2 emissions in our spray-dry processes by 50% by 2030 and achieve net zero emissions by 2040.',
-      color: 'bg-green-600',
-      borderColor: 'border-green-600'
+      color: 'bg-green-700',
+      borderColor: 'border-green-700'
     },
     {
       icon: Leaf,
@@ -24,8 +24,8 @@ const Sustainability = ({ language }: SustainabilityProps) => {
       description: language === 'es' 
         ? 'Garantizamos el abastecimiento ético y sostenible de yerba mate, stevia y té de Paraguay, promoviendo prácticas agrícolas responsables.'
         : 'We ensure ethical and sustainable sourcing of yerba mate, stevia and tea from Paraguay, promoting responsible agricultural practices.',
-      color: 'bg-orange-500',
-      borderColor: 'border-orange-500'
+      color: 'bg-green-600',
+      borderColor: 'border-green-600'
     },
     {
       icon: Users,
@@ -33,8 +33,8 @@ const Sustainability = ({ language }: SustainabilityProps) => {
       description: language === 'es' 
         ? 'Valoramos y tratamos justamente a nuestro equipo paraguayo, fomentando el crecimiento profesional y el desarrollo de talento local.'
         : 'We value and treat our Paraguayan team fairly, fostering professional growth and local talent development.',
-      color: 'bg-pink-500',
-      borderColor: 'border-pink-500'
+      color: 'bg-green-500',
+      borderColor: 'border-green-500'
     }
   ];
 
