@@ -24,8 +24,8 @@ const Sustainability = ({ language }: SustainabilityProps) => {
       description: language === 'es' 
         ? 'Garantizamos el abastecimiento ético y sostenible de yerba mate, stevia y té de Paraguay, promoviendo prácticas agrícolas responsables.'
         : 'We ensure ethical and sustainable sourcing of yerba mate, stevia and tea from Paraguay, promoting responsible agricultural practices.',
-      color: 'bg-green-600',
-      borderColor: 'border-green-600'
+      color: 'bg-green-800',
+      borderColor: 'border-green-800'
     },
     {
       icon: Users,
@@ -33,8 +33,8 @@ const Sustainability = ({ language }: SustainabilityProps) => {
       description: language === 'es' 
         ? 'Valoramos y tratamos justamente a nuestro equipo paraguayo, fomentando el crecimiento profesional y el desarrollo de talento local.'
         : 'We value and treat our Paraguayan team fairly, fostering professional growth and local talent development.',
-      color: 'bg-green-500',
-      borderColor: 'border-green-500'
+      color: 'bg-[#0d2a13]',
+      borderColor: 'border-[#0d2a13]'
     }
   ];
 

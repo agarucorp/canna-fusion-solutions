@@ -13,7 +13,8 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
     'colon-logo.png',
     'selecta-logo.png',
     'ccu-logo.png',
-    'healssen-logo.png'
+    'healssen-logo.png',
+    'wisdom-logo.png'
   ];
 
   return (
@@ -39,9 +40,19 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
                 />
               </div>
             ))}
-            {/* Segunda fila de logos (duplicada para continuidad) */}
+            {/* Segunda fila de logos (duplicada para continuidad perfecta) */}
             {brands.map((brand, index) => (
               <div key={`second-${index}`} className="flex-shrink-0 mx-8">
+                <img
+                  src={`/${brand}`}
+                  alt={`Brand ${index + 1}`}
+                  className="h-8 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </div>
+            ))}
+            {/* Tercera fila de logos (para transición más suave) */}
+            {brands.map((brand, index) => (
+              <div key={`third-${index}`} className="flex-shrink-0 mx-8">
                 <img
                   src={`/${brand}`}
                   alt={`Brand ${index + 1}`}
@@ -59,12 +70,12 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-33.333%);
           }
         }
         
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 45s linear infinite;
         }
         
         .animate-scroll:hover {
