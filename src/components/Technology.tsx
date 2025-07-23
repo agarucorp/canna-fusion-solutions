@@ -95,7 +95,7 @@ const Technology = ({ language }: TechnologyProps) => {
             <motion.img
               src="/process.jpg"
               alt="Spray Dry Industrial"
-              className="rounded-2xl shadow-2xl max-w-lg w-full object-cover md:ml-24"
+              className="rounded-2xl shadow-2xl max-w-lg w-full object-cover md:ml-48"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
