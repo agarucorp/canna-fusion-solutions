@@ -143,10 +143,10 @@ const Products = ({ language }: ProductsProps) => {
                     </div>
                   </div>
                 </div>
-                {/* Columna derecha: imagen y banner */}
+                {/* Columna derecha: imagen y banner con alturas fijas */}
                 <div className="w-2/3 flex flex-col">
-                  {/* Imagen con fade */}
-                  <div className="relative flex-1">
+                  {/* Imagen con fade - altura fija */}
+                  <div className="relative h-72">
                     <AnimatePresence mode='wait'>
                       <motion.img
                         key={product.combinations[product.currentIndex].image}
@@ -157,7 +157,6 @@ const Products = ({ language }: ProductsProps) => {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
                         className="w-full h-full object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out"
-                        style={{ height: 'calc(100% - 80px)', objectPosition: 'center 40%' }}
                       />
                     </AnimatePresence>
                     <div className="absolute top-4 right-4">
@@ -166,10 +165,10 @@ const Products = ({ language }: ProductsProps) => {
                       </Badge>
                     </div>
                   </div>
-                  {/* Banner horizontal inferior con fade para logo - solo en la columna derecha */}
-                  <div className="flex items-center justify-between bg-gray-50 border-t px-6 py-4">
-                    <span className="text-sm text-gray-600 font-medium">{product.collaboration}</span>
-                    <div className="h-10 w-24 bg-gray-50 rounded flex items-center justify-center p-1">
+                  {/* Banner horizontal inferior con fade para logo - altura fija */}
+                  <div className="flex items-center justify-between bg-gray-100 border-t border-gray-200 px-6 py-4 h-20">
+                    <span className="text-sm text-gray-700 font-medium">{product.collaboration}</span>
+                    <div className="h-10 w-24 bg-white rounded flex items-center justify-center p-1 shadow-sm">
                       <AnimatePresence mode='wait'>
                         <motion.img
                           key={product.combinations[product.currentIndex].logo}
