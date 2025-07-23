@@ -116,7 +116,7 @@ const Products = ({ language }: ProductsProps) => {
             }
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           {products.map((product, index) => (
             <motion.div
               key={index}
@@ -125,9 +125,9 @@ const Products = ({ language }: ProductsProps) => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, delay: 0.1 * index, ease: 'easeOut' }}
             >
-              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden h-96 flex relative">
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden h-96 flex flex-col md:flex-row relative">
                 {/* Columna izquierda: info - ocupa toda la altura */}
-                <div className="w-1/3 p-6 flex flex-col justify-center bg-white">
+                <div className="w-full md:w-1/3 p-4 md:p-6 flex flex-col justify-center bg-white">
                   <CardTitle className="text-xl text-gray-900 mb-4">{product.name}</CardTitle>
                   <p className="text-sm text-gray-600 mb-6">{product.description}</p>
                   <div>
@@ -144,9 +144,9 @@ const Products = ({ language }: ProductsProps) => {
                   </div>
                 </div>
                 {/* Columna derecha: imagen */}
-                <div className="w-2/3 relative">
+                <div className="w-full md:w-2/3 relative">
                   {/* Imagen con fade - altura calculada para no superponer al banner */}
-                  <div className="relative overflow-hidden" style={{ height: 'calc(100% - 80px)' }}>
+                  <div className="relative overflow-hidden h-48 md:h-auto" style={{ height: 'calc(100% - 80px)' }}>
                     {/* Fondo borroso para TODOS los productos */}
                     <AnimatePresence mode='wait'>
                       <motion.img
@@ -174,16 +174,16 @@ const Products = ({ language }: ProductsProps) => {
                         style={{ objectPosition: 'center' }}
                       />
                     </AnimatePresence>
-                    <div className="absolute top-4 right-4 z-20">
+                    <div className="absolute top-2 md:top-4 right-2 md:right-4 z-20">
                       <Badge className="bg-primary text-white text-xs">
                         {language === 'es' ? 'Soluble desde' : 'Soluble from'} {product.solubility}
                       </Badge>
                     </div>
                   </div>
                   {/* Banner horizontal inferior con fade para logo - posicionado absolutamente en la parte inferior */}
-                  <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-gray-100 border-t border-gray-200 px-6 py-4 h-20">
+                  <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-gray-100 border-t border-gray-200 px-4 md:px-6 py-3 md:py-4 h-16 md:h-20">
                     <span className="text-sm text-gray-700 font-medium">{product.collaboration}</span>
-                    <div className="h-10 w-24 flex items-center justify-center">
+                    <div className="h-8 md:h-10 w-16 md:w-24 flex items-center justify-center">
                       <AnimatePresence mode='wait'>
                         <motion.img
                           key={product.combinations[product.currentIndex].logo}
@@ -193,7 +193,7 @@ const Products = ({ language }: ProductsProps) => {
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.5 }}
-                          className="h-8 w-auto object-contain max-w-full"
+                          className="h-6 md:h-8 w-auto object-contain max-w-full"
                         />
                       </AnimatePresence>
                     </div>
