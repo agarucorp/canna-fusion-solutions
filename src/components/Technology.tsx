@@ -69,7 +69,7 @@ const Technology = ({ language }: TechnologyProps) => {
         </div>
         {/* Bloque 1: Spray Dry */}
         <motion.div
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 gap-4 items-center"
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
