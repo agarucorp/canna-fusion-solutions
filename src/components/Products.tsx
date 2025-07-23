@@ -125,27 +125,28 @@ const Products = ({ language }: ProductsProps) => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, delay: 0.1 * index, ease: 'easeOut' }}
             >
-              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden h-96 flex flex-col">
-                <div className="flex flex-1">
-                  {/* Columna izquierda: info */}
-                  <div className="w-1/3 p-6 flex flex-col justify-center">
-                    <CardTitle className="text-xl text-gray-900 mb-4">{product.name}</CardTitle>
-                    <p className="text-sm text-gray-600 mb-6">{product.description}</p>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-sm mb-3">
-                        {language === 'es' ? 'Aplicaciones:' : 'Applications:'}
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {product.applications.map((app, appIndex) => (
-                          <Badge key={appIndex} variant="outline" className="text-xs text-primary border-primary/30">
-                            {app}
-                          </Badge>
-                        ))}
-                      </div>
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden h-96 flex">
+                {/* Columna izquierda: info - ocupa toda la altura */}
+                <div className="w-1/3 p-6 flex flex-col justify-center bg-white">
+                  <CardTitle className="text-xl text-gray-900 mb-4">{product.name}</CardTitle>
+                  <p className="text-sm text-gray-600 mb-6">{product.description}</p>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 text-sm mb-3">
+                      {language === 'es' ? 'Aplicaciones:' : 'Applications:'}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {product.applications.map((app, appIndex) => (
+                        <Badge key={appIndex} variant="outline" className="text-xs text-primary border-primary/30">
+                          {app}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                  {/* Imagen a la derecha con fade */}
-                  <div className="w-2/3 relative flex items-start justify-end">
+                </div>
+                {/* Columna derecha: imagen y banner */}
+                <div className="w-2/3 flex flex-col">
+                  {/* Imagen con fade */}
+                  <div className="relative flex-1">
                     <AnimatePresence mode='wait'>
                       <motion.img
                         key={product.combinations[product.currentIndex].image}
@@ -155,7 +156,7 @@ const Products = ({ language }: ProductsProps) => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
-                        className="w-full h-64 object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out"
+                        className="w-full h-full object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out"
                         style={{ objectPosition: 'center 40%' }}
                       />
                     </AnimatePresence>
@@ -165,23 +166,23 @@ const Products = ({ language }: ProductsProps) => {
                       </Badge>
                     </div>
                   </div>
-                </div>
-                {/* Banner horizontal inferior con fade para logo */}
-                <div className="flex items-center justify-between bg-gray-50 border-t px-6 py-4 mt-auto">
-                  <span className="text-sm text-gray-600 font-medium">{product.collaboration}</span>
-                  <div className="h-10 w-24 bg-gray-50 rounded flex items-center justify-center p-1">
-                    <AnimatePresence mode='wait'>
-                      <motion.img
-                        key={product.combinations[product.currentIndex].logo}
-                        src={product.combinations[product.currentIndex].logo}
-                        alt={product.combinations[product.currentIndex].partner}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="h-8 w-auto object-contain max-w-full"
-                      />
-                    </AnimatePresence>
+                  {/* Banner horizontal inferior con fade para logo - solo en la columna derecha */}
+                  <div className="flex items-center justify-between bg-gray-50 border-t px-6 py-4">
+                    <span className="text-sm text-gray-600 font-medium">{product.collaboration}</span>
+                    <div className="h-10 w-24 bg-gray-50 rounded flex items-center justify-center p-1">
+                      <AnimatePresence mode='wait'>
+                        <motion.img
+                          key={product.combinations[product.currentIndex].logo}
+                          src={product.combinations[product.currentIndex].logo}
+                          alt={product.combinations[product.currentIndex].partner}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.5 }}
+                          className="h-8 w-auto object-contain max-w-full"
+                        />
+                      </AnimatePresence>
+                    </div>
                   </div>
                 </div>
               </Card>
