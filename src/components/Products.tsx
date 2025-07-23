@@ -145,8 +145,8 @@ const Products = ({ language }: ProductsProps) => {
                 </div>
                 {/* Columna derecha: imagen */}
                 <div className="w-2/3 relative">
-                  {/* Imagen con fade - ocupa todo el espacio disponible */}
-                  <div className="relative h-full overflow-hidden">
+                  {/* Imagen con fade - altura calculada para no superponer al banner */}
+                  <div className="relative overflow-hidden" style={{ height: 'calc(100% - 80px)' }}>
                     {/* Fondo borroso para Té Verde y Yerba Mate */}
                     {(index === 2 || index === 3) && (
                       <AnimatePresence mode='wait'>
@@ -158,7 +158,7 @@ const Products = ({ language }: ProductsProps) => {
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
                           transition={{ duration: 0.7 }}
-                          className="absolute inset-0 w-full h-full object-cover rounded-none blur-sm scale-110"
+                          className="absolute inset-0 w-full h-full object-cover rounded-none blur-md scale-125"
                         />
                       </AnimatePresence>
                     )}
@@ -172,8 +172,8 @@ const Products = ({ language }: ProductsProps) => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
-                        className={`w-full h-full object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out ${
-                          (index === 2 || index === 3) ? 'relative z-10' : ''
+                        className={`w-full h-full rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out ${
+                          (index === 2 || index === 3) ? 'relative z-10 object-contain' : 'object-cover'
                         }`}
                         style={{ 
                           objectPosition: index === 0 ? 'center 30%' : // Té Negro
