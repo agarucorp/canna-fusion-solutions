@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Hero from "@/components/Hero";
+import BrandBanner from "@/components/BrandBanner";
 import About from "@/components/About";
 import Products from "@/components/Products";
 import Technology from "@/components/Technology";
@@ -51,6 +52,7 @@ const Index = () => {
       {/* Main Content */}
       <main>
         <Hero language={language} />
+        <BrandBanner language={language} />
         <About language={language} />
         <Products language={language} />
         <Technology language={language} />
