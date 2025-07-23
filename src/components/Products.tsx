@@ -310,7 +310,7 @@ const Products = ({ language }: ProductsProps) => {
                     : 'Instant-dissolving granulated format, ideal for beverages and direct consumption applications.'
                   }
                 </p>
-                <div className="flex flex-col gap-2">
+                <div className="space-y-2">
                   <Badge variant="outline" className="text-xs text-orange-700 border-orange-300">
                     {language === 'es' ? 'Disolución instantánea' : 'Instant dissolution'}
                   </Badge>
