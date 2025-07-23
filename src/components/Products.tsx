@@ -146,7 +146,23 @@ const Products = ({ language }: ProductsProps) => {
                 {/* Columna derecha: imagen */}
                 <div className="w-2/3 relative">
                   {/* Imagen con fade - ocupa todo el espacio disponible */}
-                  <div className="relative h-full">
+                  <div className="relative h-full overflow-hidden">
+                    {/* Fondo borroso para Té Verde y Yerba Mate */}
+                    {(index === 2 || index === 3) && (
+                      <AnimatePresence mode='wait'>
+                        <motion.img
+                          key={`bg-${product.combinations[product.currentIndex].image}`}
+                          src={product.combinations[product.currentIndex].image}
+                          alt=""
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.7 }}
+                          className="absolute inset-0 w-full h-full object-cover rounded-none blur-sm scale-110"
+                        />
+                      </AnimatePresence>
+                    )}
+                    {/* Imagen principal */}
                     <AnimatePresence mode='wait'>
                       <motion.img
                         key={product.combinations[product.currentIndex].image}
@@ -156,16 +172,18 @@ const Products = ({ language }: ProductsProps) => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
-                        className="w-full h-full object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out"
+                        className={`w-full h-full object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out ${
+                          (index === 2 || index === 3) ? 'relative z-10' : ''
+                        }`}
                         style={{ 
                           objectPosition: index === 0 ? 'center 30%' : // Té Negro
                                    index === 1 ? 'center 25%' : // Stevia
-                                   index === 2 ? 'center 35%' : // Té Verde
-                                   'center 30%' // Yerba Mate
+                                   index === 2 ? 'center' : // Té Verde - centrada para efecto completo
+                                   'center' // Yerba Mate - centrada para efecto completo
                         }}
                       />
                     </AnimatePresence>
-                    <div className="absolute top-4 right-4">
+                    <div className="absolute top-4 right-4 z-20">
                       <Badge className="bg-primary text-white text-xs">
                         {language === 'es' ? 'Soluble desde' : 'Soluble from'} {product.solubility}
                       </Badge>

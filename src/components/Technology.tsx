@@ -75,7 +75,7 @@ const Technology = ({ language }: TechnologyProps) => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="text-left">
+          <div className="text-left md:pl-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {language === 'es' ? 'Spray Dry Industrial' : 'Industrial Spray Dry'}
             </h2>
@@ -91,7 +91,7 @@ const Technology = ({ language }: TechnologyProps) => {
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Procesos certificados y controlados' : 'Certified and controlled processes'}</li>
             </ul>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center md:pl-8">
             <motion.img
               src="/process.jpg"
               alt="Spray Dry Industrial"
@@ -111,10 +111,10 @@ const Technology = ({ language }: TechnologyProps) => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="flex justify-start md:pl-0 pl-0 order-1 md:order-none">
+          <div className="flex justify-start md:pl-8 pl-0 order-1 md:order-none">
             <img src="/spray-dry.jpg" alt="I+D y Formulación" className="rounded-2xl shadow-2xl max-w-md w-full object-cover" />
           </div>
-          <div className="text-left order-2 md:order-none">
+          <div className="text-left md:pl-8 order-2 md:order-none">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {language === 'es' ? 'I+D y Formulación Personalizada' : 'R&D and Custom Formulation'}
             </h2>
