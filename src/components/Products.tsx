@@ -311,10 +311,10 @@ const Products = ({ language }: ProductsProps) => {
                   }
                 </p>
                 <div className="flex flex-col space-y-2">
-                  <Badge variant="outline" className="text-xs text-orange-700 border-orange-300">
+                  <Badge variant="outline" className="text-xs text-orange-700 border-orange-300 w-fit">
                     {language === 'es' ? 'Disolución instantánea' : 'Instant dissolution'}
                   </Badge>
-                  <Badge variant="outline" className="text-xs text-orange-700 border-orange-300">
+                  <Badge variant="outline" className="text-xs text-orange-700 border-orange-300 w-fit">
                     {language === 'es' ? 'Sin residuos ni sedimentos' : 'No residues or sediments'}
                   </Badge>
                 </div>

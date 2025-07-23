@@ -91,7 +91,7 @@ const Technology = ({ language }: TechnologyProps) => {
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Procesos certificados y controlados' : 'Certified and controlled processes'}</li>
             </ul>
           </div>
-          <div className="flex justify-center md:pl-24">
+          <div className="flex justify-start md:pl-24">
             <motion.img
               src="/process.jpg"
               alt="Spray Dry Industrial"
