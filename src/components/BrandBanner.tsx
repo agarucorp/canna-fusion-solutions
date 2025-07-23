@@ -37,7 +37,7 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
                   src={`/${brand}`}
                   alt={`Brand ${index + 1}`}
                   className={`h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity ${
-                    brand === 'healssen-logo.png' || brand === 'wisdom-logo.png' || brand === 'ccu-logo.png'
+                    brand === 'healssen-logo.png' || brand === 'wisdom-logo.png' || brand === 'ccu-logo.png' || brand === 'pure-circle-logo.png'
                       ? 'filter brightness-0 invert'
                       : ''
                   }`}
@@ -51,7 +51,7 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
                   src={`/${brand}`}
                   alt={`Brand ${index + 1}`}
                   className={`h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity ${
-                    brand === 'healssen-logo.png' || brand === 'wisdom-logo.png' || brand === 'ccu-logo.png'
+                    brand === 'healssen-logo.png' || brand === 'wisdom-logo.png' || brand === 'ccu-logo.png' || brand === 'pure-circle-logo.png'
                       ? 'filter brightness-0 invert'
                       : ''
                   }`}
@@ -65,7 +65,7 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
                   src={`/${brand}`}
                   alt={`Brand ${index + 1}`}
                   className={`h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity ${
-                    brand === 'healssen-logo.png' || brand === 'wisdom-logo.png' || brand === 'ccu-logo.png'
+                    brand === 'healssen-logo.png' || brand === 'wisdom-logo.png' || brand === 'ccu-logo.png' || brand === 'pure-circle-logo.png'
                       ? 'filter brightness-0 invert'
                       : ''
                   }`}
