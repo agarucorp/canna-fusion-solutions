@@ -157,7 +157,7 @@ const Products = ({ language }: ProductsProps) => {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
                         className="w-full h-full object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out"
-                        style={{ objectPosition: 'center 40%' }}
+                        style={{ height: 'calc(100% - 80px)', objectPosition: 'center 40%' }}
                       />
                     </AnimatePresence>
                     <div className="absolute top-4 right-4">
