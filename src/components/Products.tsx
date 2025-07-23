@@ -147,21 +147,19 @@ const Products = ({ language }: ProductsProps) => {
                 <div className="w-2/3 relative">
                   {/* Imagen con fade - altura calculada para no superponer al banner */}
                   <div className="relative overflow-hidden" style={{ height: 'calc(100% - 80px)' }}>
-                    {/* Fondo borroso para Té Verde y Yerba Mate */}
-                    {(index === 2 || index === 3) && (
-                      <AnimatePresence mode='wait'>
-                        <motion.img
-                          key={`bg-${product.combinations[product.currentIndex].image}`}
-                          src={product.combinations[product.currentIndex].image}
-                          alt=""
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.7 }}
-                          className="absolute inset-0 w-full h-full object-cover rounded-none blur-md scale-125"
-                        />
-                      </AnimatePresence>
-                    )}
+                    {/* Fondo borroso para TODOS los productos */}
+                    <AnimatePresence mode='wait'>
+                      <motion.img
+                        key={`bg-${product.combinations[product.currentIndex].image}`}
+                        src={product.combinations[product.currentIndex].image}
+                        alt=""
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.7 }}
+                        className="absolute inset-0 w-full h-full object-cover rounded-none blur-md scale-125"
+                      />
+                    </AnimatePresence>
                     {/* Imagen principal */}
                     <AnimatePresence mode='wait'>
                       <motion.img
@@ -172,15 +170,8 @@ const Products = ({ language }: ProductsProps) => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
-                        className={`w-full h-full rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out ${
-                          (index === 2 || index === 3) ? 'relative z-10 object-contain' : 'object-cover'
-                        }`}
-                        style={{ 
-                          objectPosition: index === 0 ? 'center 30%' : // Té Negro
-                                   index === 1 ? 'center 25%' : // Stevia
-                                   index === 2 ? 'center' : // Té Verde - centrada para efecto completo
-                                   'center' // Yerba Mate - centrada para efecto completo
-                        }}
+                        className="w-full h-full rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out relative z-10 object-contain"
+                        style={{ objectPosition: 'center' }}
                       />
                     </AnimatePresence>
                     <div className="absolute top-4 right-4 z-20">
@@ -192,7 +183,7 @@ const Products = ({ language }: ProductsProps) => {
                   {/* Banner horizontal inferior con fade para logo - posicionado absolutamente en la parte inferior */}
                   <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-gray-100 border-t border-gray-200 px-6 py-4 h-20">
                     <span className="text-sm text-gray-700 font-medium">{product.collaboration}</span>
-                    <div className="h-10 w-24 bg-white rounded flex items-center justify-center p-1 shadow-sm">
+                    <div className="h-10 w-24 flex items-center justify-center">
                       <AnimatePresence mode='wait'>
                         <motion.img
                           key={product.combinations[product.currentIndex].logo}
