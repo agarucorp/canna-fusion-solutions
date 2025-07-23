@@ -91,11 +91,11 @@ const Technology = ({ language }: TechnologyProps) => {
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Procesos certificados y controlados' : 'Certified and controlled processes'}</li>
             </ul>
           </div>
-          <div className="flex justify-start md:pl-24">
+          <div className="flex">
             <motion.img
               src="/process.jpg"
               alt="Spray Dry Industrial"
-              className="rounded-2xl shadow-2xl max-w-lg w-full object-cover"
+              className="rounded-2xl shadow-2xl max-w-lg w-full object-cover md:ml-24"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
