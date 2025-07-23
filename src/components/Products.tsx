@@ -125,7 +125,7 @@ const Products = ({ language }: ProductsProps) => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, delay: 0.1 * index, ease: 'easeOut' }}
             >
-              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden h-96 flex">
+              <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden h-96 flex relative">
                 {/* Columna izquierda: info - ocupa toda la altura */}
                 <div className="w-1/3 p-6 flex flex-col justify-center bg-white">
                   <CardTitle className="text-xl text-gray-900 mb-4">{product.name}</CardTitle>
@@ -143,10 +143,10 @@ const Products = ({ language }: ProductsProps) => {
                     </div>
                   </div>
                 </div>
-                {/* Columna derecha: imagen y banner con alturas fijas */}
-                <div className="w-2/3 flex flex-col">
-                  {/* Imagen con fade - altura fija */}
-                  <div className="relative h-72">
+                {/* Columna derecha: imagen */}
+                <div className="w-2/3 relative">
+                  {/* Imagen con fade - ocupa todo el espacio disponible */}
+                  <div className="relative h-full">
                     <AnimatePresence mode='wait'>
                       <motion.img
                         key={product.combinations[product.currentIndex].image}
@@ -157,6 +157,12 @@ const Products = ({ language }: ProductsProps) => {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
                         className="w-full h-full object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out"
+                        style={{ 
+                          objectPosition: index === 0 ? 'center 30%' : // Té Negro
+                                   index === 1 ? 'center 25%' : // Stevia
+                                   index === 2 ? 'center 35%' : // Té Verde
+                                   'center 30%' // Yerba Mate
+                        }}
                       />
                     </AnimatePresence>
                     <div className="absolute top-4 right-4">
@@ -165,8 +171,8 @@ const Products = ({ language }: ProductsProps) => {
                       </Badge>
                     </div>
                   </div>
-                  {/* Banner horizontal inferior con fade para logo - altura fija */}
-                  <div className="flex items-center justify-between bg-gray-100 border-t border-gray-200 px-6 py-4 h-20">
+                  {/* Banner horizontal inferior con fade para logo - posicionado absolutamente en la parte inferior */}
+                  <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between bg-gray-100 border-t border-gray-200 px-6 py-4 h-20">
                     <span className="text-sm text-gray-700 font-medium">{product.collaboration}</span>
                     <div className="h-10 w-24 bg-white rounded flex items-center justify-center p-1 shadow-sm">
                       <AnimatePresence mode='wait'>
@@ -187,6 +193,125 @@ const Products = ({ language }: ProductsProps) => {
               </Card>
             </motion.div>
           ))}
+        </div>
+        
+        {/* Sección de Formatos Disponibles */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {language === 'es' ? 'Formatos Disponibles' : 'Available Formats'}
+            </h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {language === 'es'
+                ? 'Nuestros extractos están disponibles en múltiples formatos para adaptarse a diferentes aplicaciones industriales.'
+                : 'Our extracts are available in multiple formats to adapt to different industrial applications.'
+              }
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Formato en Polvo */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 h-full">
+                <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">
+                  {language === 'es' ? 'Polvo Soluble' : 'Soluble Powder'}
+                </h4>
+                <p className="text-gray-600 mb-4">
+                  {language === 'es'
+                    ? 'Formato en polvo fino, ideal para mezclas secas y aplicaciones donde se requiere fácil dispersión.'
+                    : 'Fine powder format, ideal for dry mixes and applications requiring easy dispersion.'
+                  }
+                </p>
+                <div className="space-y-2">
+                  <Badge variant="outline" className="text-xs text-green-700 border-green-300">
+                    {language === 'es' ? 'Solubilidad en frío desde 6°C' : 'Cold solubility from 6°C'}
+                  </Badge>
+                  <Badge variant="outline" className="text-xs text-green-700 border-green-300">
+                    {language === 'es' ? 'Solubilidad en caliente hasta 100°C' : 'Hot solubility up to 100°C'}
+                  </Badge>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Formato Líquido */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 h-full">
+                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">
+                  {language === 'es' ? 'Extracto Líquido' : 'Liquid Extract'}
+                </h4>
+                <p className="text-gray-600 mb-4">
+                  {language === 'es'
+                    ? 'Concentrado líquido de alta pureza, perfecto para aplicaciones donde se requiere máxima concentración.'
+                    : 'High-purity liquid concentrate, perfect for applications requiring maximum concentration.'
+                  }
+                </p>
+                <div className="space-y-2">
+                  <Badge variant="outline" className="text-xs text-blue-700 border-blue-300">
+                    {language === 'es' ? 'Concentración hasta 50%' : 'Concentration up to 50%'}
+                  </Badge>
+                  <Badge variant="outline" className="text-xs text-blue-700 border-blue-300">
+                    {language === 'es' ? 'Estable a temperatura ambiente' : 'Stable at room temperature'}
+                  </Badge>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Formato Granulado */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-8 h-full">
+                <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                  </svg>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">
+                  {language === 'es' ? 'Granulado Instantáneo' : 'Instant Granulated'}
+                </h4>
+                <p className="text-gray-600 mb-4">
+                  {language === 'es'
+                    ? 'Formato granulado de disolución instantánea, ideal para bebidas y aplicaciones de consumo directo.'
+                    : 'Instant-dissolving granulated format, ideal for beverages and direct consumption applications.'
+                  }
+                </p>
+                <div className="space-y-2">
+                  <Badge variant="outline" className="text-xs text-orange-700 border-orange-300">
+                    {language === 'es' ? 'Disolución instantánea' : 'Instant dissolution'}
+                  </Badge>
+                  <Badge variant="outline" className="text-xs text-orange-700 border-orange-300">
+                    {language === 'es' ? 'Sin residuos ni sedimentos' : 'No residues or sediments'}
+                  </Badge>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
