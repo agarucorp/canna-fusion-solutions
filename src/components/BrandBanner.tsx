@@ -14,7 +14,8 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
     'selecta-logo.png',
     'ccu-logo.png',
     'healssen-logo.png',
-    'wisdom-logo.png'
+    'wisdom-logo.png',
+    'indega-logo.png'
   ];
 
   return (
