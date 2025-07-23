@@ -1,7 +1,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 interface ProductsProps {
@@ -36,20 +36,21 @@ const Products = ({ language }: ProductsProps) => {
     { image: '/black-tea-cuarto-creciente.jpg', logo: '/cuarto-creciente-logo.png', partner: 'Cuarto Creciente' }
   ];
 
+  // Timers con mayor persistencia (6 segundos)
   useEffect(() => {
-    const interval = setInterval(() => setYerbaMateIndex(i => (i + 1) % yerbaMateCombinations.length), 4000);
+    const interval = setInterval(() => setYerbaMateIndex(i => (i + 1) % yerbaMateCombinations.length), 6000);
     return () => clearInterval(interval);
   }, []);
   useEffect(() => {
-    const interval = setInterval(() => setSteviaIndex(i => (i + 1) % steviaCombinations.length), 3000);
+    const interval = setInterval(() => setSteviaIndex(i => (i + 1) % steviaCombinations.length), 6000);
     return () => clearInterval(interval);
   }, []);
   useEffect(() => {
-    const interval = setInterval(() => setGreenTeaIndex(i => (i + 1) % greenTeaCombinations.length), 3500);
+    const interval = setInterval(() => setGreenTeaIndex(i => (i + 1) % greenTeaCombinations.length), 6000);
     return () => clearInterval(interval);
   }, []);
   useEffect(() => {
-    const interval = setInterval(() => setBlackTeaIndex(i => (i + 1) % blackTeaCombinations.length), 3500);
+    const interval = setInterval(() => setBlackTeaIndex(i => (i + 1) % blackTeaCombinations.length), 6000);
     return () => clearInterval(interval);
   }, []);
 
@@ -143,13 +144,21 @@ const Products = ({ language }: ProductsProps) => {
                       </div>
                     </div>
                   </div>
-                  {/* Imagen a la derecha */}
+                  {/* Imagen a la derecha con fade */}
                   <div className="w-2/3 relative flex items-start justify-end">
-                    <img
-                      src={product.combinations[product.currentIndex].image}
-                      alt={product.name}
-                      className="w-full h-64 object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out"
-                    />
+                    <AnimatePresence mode='wait'>
+                      <motion.img
+                        key={product.combinations[product.currentIndex].image}
+                        src={product.combinations[product.currentIndex].image}
+                        alt={product.name}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.7 }}
+                        className="w-full h-64 object-cover rounded-none group-hover:scale-105 transition-all duration-700 ease-in-out"
+                        style={{ objectPosition: 'center 40%' }}
+                      />
+                    </AnimatePresence>
                     <div className="absolute top-4 right-4">
                       <Badge className="bg-primary text-white text-xs">
                         {language === 'es' ? 'Soluble desde' : 'Soluble from'} {product.solubility}
@@ -157,15 +166,22 @@ const Products = ({ language }: ProductsProps) => {
                     </div>
                   </div>
                 </div>
-                {/* Banner horizontal inferior */}
-                <div className="flex items-center justify-between bg-gray-50 border-t px-6 py-3 mt-auto">
+                {/* Banner horizontal inferior con fade para logo */}
+                <div className="flex items-center justify-between bg-gray-50 border-t px-6 py-4 mt-auto">
                   <span className="text-sm text-gray-600 font-medium">{product.collaboration}</span>
-                  <div className="h-8 w-20 bg-white rounded flex items-center justify-center">
-                    <img
-                      src={product.combinations[product.currentIndex].logo}
-                      alt={product.combinations[product.currentIndex].partner}
-                      className="h-6 w-auto object-contain transition-all duration-500 ease-in-out"
-                    />
+                  <div className="h-10 w-24 bg-gray-50 rounded flex items-center justify-center p-1">
+                    <AnimatePresence mode='wait'>
+                      <motion.img
+                        key={product.combinations[product.currentIndex].logo}
+                        src={product.combinations[product.currentIndex].logo}
+                        alt={product.combinations[product.currentIndex].partner}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="h-8 w-auto object-contain max-w-full"
+                      />
+                    </AnimatePresence>
                   </div>
                 </div>
               </Card>
