@@ -12,6 +12,8 @@ const Products = ({ language }: ProductsProps) => {
   // Estados para el carrusel automático
   const [yerbaMateIndex, setYerbaMateIndex] = useState(0);
   const [steviaIndex, setSteviaIndex] = useState(0);
+  const [greenTeaIndex, setGreenTeaIndex] = useState(0);
+  const [blackTeaIndex, setBlackTeaIndex] = useState(0);
 
   // Combinaciones de Yerba Mate
   const yerbaMateCombinations = [
@@ -48,6 +50,39 @@ const Products = ({ language }: ProductsProps) => {
       image: '/wisdom-stevia.jpg',
       logo: '/wisdom-logo.png',
       partner: 'Wisdom'
+    },
+    {
+      image: '/squadra-stevia.jpg',
+      logo: '/squadra-logo.png',
+      partner: 'Squadra'
+    }
+  ];
+
+  // Combinaciones de Té Verde
+  const greenTeaCombinations = [
+    {
+      image: '/tea-haelsssen.jpg',
+      logo: '/healssen-logo.png',
+      partner: 'Hälssen'
+    },
+    {
+      image: '/te-verde-cuarto.jpg',
+      logo: '/cuarto-creciente-logo.png',
+      partner: 'Cuarto Creciente'
+    }
+  ];
+
+  // Combinaciones de Té Negro
+  const blackTeaCombinations = [
+    {
+      image: '/black-tea-haelssen.jpg',
+      logo: '/healssen-logo.png',
+      partner: 'Hälssen'
+    },
+    {
+      image: '/black-tea-cuarto-creciente.jpg',
+      logo: '/cuarto-creciente-logo.png',
+      partner: 'Cuarto Creciente'
     }
   ];
 
@@ -60,7 +95,7 @@ const Products = ({ language }: ProductsProps) => {
     return () => clearInterval(interval);
   }, [yerbaMateCombinations.length]);
 
-  // Timer para Stevia (2 combinaciones - 3 segundos cada una)
+  // Timer para Stevia (3 combinaciones - 3 segundos cada una)
   useEffect(() => {
     const interval = setInterval(() => {
       setSteviaIndex((prevIndex) => (prevIndex + 1) % steviaCombinations.length);
@@ -68,6 +103,24 @@ const Products = ({ language }: ProductsProps) => {
 
     return () => clearInterval(interval);
   }, [steviaCombinations.length]);
+
+  // Timer para Té Verde (2 combinaciones - 3.5 segundos cada una)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGreenTeaIndex((prevIndex) => (prevIndex + 1) % greenTeaCombinations.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [greenTeaCombinations.length]);
+
+  // Timer para Té Negro (2 combinaciones - 3.5 segundos cada una)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBlackTeaIndex((prevIndex) => (prevIndex + 1) % blackTeaCombinations.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [blackTeaCombinations.length]);
 
   const products = [
     {
@@ -97,22 +150,22 @@ const Products = ({ language }: ProductsProps) => {
       description: language === 'es' 
         ? 'Extracto concentrado de té verde con alto contenido de antioxidantes. Solubilidad excepcional.'
         : 'Concentrated green tea extract with high antioxidant content. Exceptional solubility.',
-      image: '/te-verde.jpg',
       applications: language === 'es' ? ['Cosmética', 'Suplementos', 'Bebidas', 'Aromaterapia'] : ['Cosmetics', 'Supplements', 'Beverages', 'Aromatherapy'],
       solubility: '6°C',
       collaboration: language === 'es' ? 'En colaboración con:' : 'In collaboration with:',
-      partnerLogo: 'partner-logo-3.png' // Placeholder
+      combinations: greenTeaCombinations,
+      currentIndex: greenTeaIndex
     },
     {
       name: language === 'es' ? 'Té Negro Soluble' : 'Soluble Black Tea',
       description: language === 'es' 
         ? 'Extracto de té negro con sabor intenso y color característico. Ideal para bebidas instantáneas.'
         : 'Black tea extract with intense flavor and characteristic color. Ideal for instant beverages.',
-      image: '/black-tea.jpg',
       applications: language === 'es' ? ['Té Instantáneo', 'Bebidas RTD', 'Mezclas', 'Saborizantes'] : ['Instant Tea', 'RTD Beverages', 'Blends', 'Flavorings'],
       solubility: '10°C',
       collaboration: language === 'es' ? 'En colaboración con:' : 'In collaboration with:',
-      partnerLogo: 'partner-logo-4.png' // Placeholder
+      combinations: blackTeaCombinations,
+      currentIndex: blackTeaIndex
     }
   ];
 
@@ -141,15 +194,30 @@ const Products = ({ language }: ProductsProps) => {
               transition={{ duration: 0.7, delay: 0.1 * index, ease: 'easeOut' }}
             >
               <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg overflow-hidden h-96">
-                <div className="relative h-full flex">
-                  {/* Lado izquierdo - Información del producto (30%) */}
-                  <div className="w-1/3 p-6 flex flex-col justify-between">
-                    <div>
-                      <CardTitle className="text-xl text-gray-900 mb-3">{product.name}</CardTitle>
-                      <p className="text-sm text-gray-600 mb-4">{product.description}</p>
+                <div className="relative h-full flex flex-col">
+                  {/* Parte superior - Imagen del producto (70% altura) */}
+                  <div className="h-[70%] relative">
+                    <img 
+                      src={product.combinations ? product.combinations[product.currentIndex].image : product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700 ease-in-out"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-primary text-white text-xs">
+                        {language === 'es' ? 'Soluble desde' : 'Soluble from'} {product.solubility}
+                      </Badge>
+                    </div>
+                  </div>
+                  
+                  {/* Parte inferior - Información y colaboración (30% altura) */}
+                  <div className="h-[30%] flex">
+                    {/* Lado izquierdo - Información del producto (70% ancho) */}
+                    <div className="w-[70%] p-4 flex flex-col justify-center">
+                      <CardTitle className="text-lg text-gray-900 mb-2">{product.name}</CardTitle>
+                      <p className="text-xs text-gray-600 mb-3 line-clamp-2">{product.description}</p>
                       
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-gray-900 text-sm mb-2">
+                      <div>
+                        <h4 className="font-semibold text-gray-900 text-xs mb-1">
                           {language === 'es' ? 'Aplicaciones:' : 'Applications:'}
                         </h4>
                         <div className="flex flex-wrap gap-1">
@@ -162,34 +230,20 @@ const Products = ({ language }: ProductsProps) => {
                       </div>
                     </div>
                     
-                    {/* Sección de colaboración (parte inferior izquierda) */}
-                    <div className="border-t pt-4">
-                      <p className="text-xs text-gray-500 mb-2">{product.collaboration}</p>
-                      <div className="h-8 bg-gray-100 rounded flex items-center justify-center">
+                    {/* Lado derecho - Sección de colaboración (30% ancho) */}
+                    <div className="w-[30%] p-4 flex flex-col justify-center items-center border-l">
+                      <p className="text-xs text-gray-500 mb-2 text-center">{product.collaboration}</p>
+                      <div className="h-8 w-full bg-gray-100 rounded flex items-center justify-center">
                         {product.combinations ? (
                           <img 
                             src={product.combinations[product.currentIndex].logo}
                             alt={product.combinations[product.currentIndex].partner}
-                            className="h-6 w-auto object-contain"
+                            className="h-6 w-auto object-contain transition-all duration-500 ease-in-out"
                           />
                         ) : (
                           <span className="text-xs text-gray-400">[Logo Partner]</span>
                         )}
                       </div>
-                    </div>
-                  </div>
-                  
-                  {/* Lado derecho - Imagen del producto (70%) */}
-                  <div className="w-2/3 relative">
-                    <img 
-                      src={product.combinations ? product.combinations[product.currentIndex].image : product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-4 right-4">
-                      <Badge className="bg-primary text-white text-xs">
-                        {language === 'es' ? 'Soluble desde' : 'Soluble from'} {product.solubility}
-                      </Badge>
                     </div>
                   </div>
                 </div>
