@@ -36,7 +36,7 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
                 <img
                   src={`/${brand}`}
                   alt={`Brand ${index + 1}`}
-                  className="h-8 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                  className="h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}
@@ -46,7 +46,7 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
                 <img
                   src={`/${brand}`}
                   alt={`Brand ${index + 1}`}
-                  className="h-8 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                  className="h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}
@@ -56,7 +56,7 @@ const BrandBanner = ({ language }: BrandBannerProps) => {
                 <img
                   src={`/${brand}`}
                   alt={`Brand ${index + 1}`}
-                  className="h-8 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                  className="h-8 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>
             ))}
