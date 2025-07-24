@@ -176,7 +176,7 @@ const Contact = ({ language }: ContactProps) => {
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-green-600" />
                   <div>
-                    <p className="font-medium text-gray-900">comercial@cannlabs.com</p>
+                    <p className="font-medium text-gray-900">info@cannlabs.com.py</p>
                     <p className="text-sm text-gray-600">
                       {language === 'es' ? 'Equipo comercial' : 'Commercial team'}
                     </p>
@@ -186,7 +186,7 @@ const Contact = ({ language }: ContactProps) => {
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-green-600" />
                   <div>
-                    <p className="font-medium text-gray-900">+595 21 XXX-XXXX</p>
+                    <p className="font-medium text-gray-900">+595 984 299188</p>
                     <p className="text-sm text-gray-600">
                       {language === 'es' ? 'Lunes a viernes, 8:00 - 17:00' : 'Monday to Friday, 8:00 - 17:00'}
                     </p>

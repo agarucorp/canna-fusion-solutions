@@ -247,7 +247,7 @@ const Products = ({ language }: ProductsProps) => {
                     {language === 'es' ? 'Solubilidad en frío desde 6°C' : 'Cold solubility from 6°C'}
                   </Badge>
                   <Badge variant="outline" className="text-xs text-green-700 border-green-300">
-                    {language === 'es' ? 'Solubilidad en caliente hasta 100°C' : 'Hot solubility up to 100°C'}
+                    {language === 'es' ? 'Solubilidad en caliente a partir de los 21°C' : 'Hot solubility from 21°C'}
                   </Badge>
                 </div>
               </div>

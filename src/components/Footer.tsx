@@ -49,11 +49,11 @@ const Footer = ({ language }: FooterProps) => {
             <div className="space-y-3 text-gray-400 text-sm">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>comercial@cannlabs.com</span>
+                <span>info@cannlabs.com.py</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>+595 21 XXX-XXXX</span>
+                <span>+595 984 299188</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
