@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 import { motion } from 'framer-motion';
+import * as emailjs from '@emailjs/browser';
 
 interface ContactProps {
   language: string;
@@ -22,10 +23,90 @@ const Contact = ({ language }: ContactProps) => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({
+    name: '',
+    company: '',
+    phone: '',
+    interest: '',
+    message: ''
+  });
+
+  const [touched, setTouched] = useState({
+    name: false,
+    company: false,
+    phone: false,
+    interest: false,
+    message: false
+  });
+
+  const validate = (field: string, value: string) => {
+    switch (field) {
+      case 'name':
+        return value.trim() ? '' : (language === 'es' ? 'El nombre es obligatorio.' : 'Name is required.');
+      case 'company':
+        return value.trim() ? '' : (language === 'es' ? 'La empresa es obligatoria.' : 'Company is required.');
+      case 'phone':
+        if (!value.trim()) return language === 'es' ? 'El teléfono es obligatorio.' : 'Phone is required.';
+        if (value.length < 8) return language === 'es' ? 'El teléfono debe tener al menos 8 números.' : 'Phone must be at least 8 digits.';
+        if (value.length > 13) return language === 'es' ? 'El teléfono no puede tener más de 13 números.' : 'Phone cannot be more than 13 digits.';
+        return '';
+      case 'interest':
+        return value.trim() ? '' : (language === 'es' ? 'El interés es obligatorio.' : 'Interest is required.');
+      case 'message':
+        return value.trim() ? '' : (language === 'es' ? 'El mensaje es obligatorio.' : 'Message is required.');
+      default:
+        return '';
+    }
+  };
+
+  const handleChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    setErrors(prev => ({ ...prev, [field]: validate(field, value) }));
+  };
+
+  const handleBlur = (field: string) => {
+    setTouched(prev => ({ ...prev, [field]: true }));
+    setErrors(prev => ({ ...prev, [field]: validate(field, formData[field as keyof typeof formData]) }));
+  };
+
+  const isFormValid = () => {
+    return (
+      formData.name.trim() &&
+      formData.company.trim() &&
+      formData.phone.trim() &&
+      formData.interest.trim() &&
+      formData.message.trim() &&
+      Object.values(errors).every(e => !e)
+    );
+  };
+
+  // Al enviar, marcar todos como tocados para mostrar errores si los hay
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(language === 'es' ? 'Mensaje enviado exitosamente. Te contactaremos pronto.' : 'Message sent successfully. We will contact you soon.');
-    setFormData({ name: '', company: '', phone: '', interest: '', message: '' });
+    setTouched({ name: true, company: true, phone: true, interest: true, message: true });
+    // Validar todos los campos antes de enviar
+    const newErrors: any = {};
+    Object.keys(formData).forEach(field => {
+      newErrors[field] = validate(field, (formData as any)[field]);
+    });
+    setErrors(newErrors);
+    if (Object.values(newErrors).some(e => e)) return;
+    setLoading(true);
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      const templateParams = { ...formData };
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      toast.success(language === 'es' ? 'Mensaje enviado exitosamente. Te contactaremos pronto.' : 'Message sent successfully. We will contact you soon.');
+      setFormData({ name: '', company: '', phone: '', interest: '', message: '' });
+      setErrors({ name: '', company: '', phone: '', interest: '', message: '' });
+    } catch (error) {
+      toast.error(language === 'es' ? 'Hubo un error al enviar el mensaje. Intenta nuevamente.' : 'There was an error sending the message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const interests = language === 'es' 
@@ -72,9 +153,11 @@ const Contact = ({ language }: ContactProps) => {
                     <Input
                       required
                       value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      onChange={(e) => handleChange('name', e.target.value)}
+                      onBlur={() => handleBlur('name')}
                       placeholder={language === 'es' ? 'Tu nombre completo' : 'Your full name'}
                     />
+                    {(touched.name || Object.values(touched).some(Boolean)) && errors.name && <p className="text-red-600 text-xs mt-1">{errors.name}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -83,9 +166,11 @@ const Contact = ({ language }: ContactProps) => {
                     <Input
                       required
                       value={formData.company}
-                      onChange={(e) => setFormData({...formData, company: e.target.value})}
+                      onChange={(e) => handleChange('company', e.target.value)}
+                      onBlur={() => handleBlur('company')}
                       placeholder={language === 'es' ? 'Nombre de tu empresa' : 'Your company name'}
                     />
+                    {(touched.company || Object.values(touched).some(Boolean)) && errors.company && <p className="text-red-600 text-xs mt-1">{errors.company}</p>}
                   </div>
                 </div>
                 
@@ -96,17 +181,25 @@ const Contact = ({ language }: ContactProps) => {
                     </label>
                     <Input
                       required
-                      type="tel"
+                      type="number"
                       value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      onChange={(e) => handleChange('phone', e.target.value)}
+                      onBlur={() => handleBlur('phone')}
                       placeholder={language === 'es' ? 'Tu número de teléfono' : 'Your phone number'}
+                      style={{ MozAppearance: 'textfield' }}
+                      className="[appearance:textfield]"
+                      onWheel={e => (e.target as HTMLInputElement).blur()} // Evita scroll accidental
                     />
+                    {(touched.phone || Object.values(touched).some(Boolean)) && errors.phone && <p className="text-red-600 text-xs mt-1">{errors.phone}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       {language === 'es' ? 'Interés *' : 'Interest *'}
                     </label>
-                    <Select onValueChange={(value) => setFormData({...formData, interest: value})}>
+                    <Select onValueChange={(value) => {
+                      handleChange('interest', value);
+                      setTouched(prev => ({ ...prev, interest: true }));
+                    }}>
                       <SelectTrigger>
                         <SelectValue placeholder={language === 'es' ? 'Selecciona un producto' : 'Select a product'} />
                       </SelectTrigger>
@@ -118,6 +211,7 @@ const Contact = ({ language }: ContactProps) => {
                         ))}
                       </SelectContent>
                     </Select>
+                    {(touched.interest || Object.values(touched).some(Boolean)) && errors.interest && <p className="text-red-600 text-xs mt-1">{errors.interest}</p>}
                   </div>
                 </div>
                 
@@ -127,18 +221,22 @@ const Contact = ({ language }: ContactProps) => {
                   </label>
                   <Textarea
                     value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    onChange={(e) => handleChange('message', e.target.value)}
+                    onBlur={() => handleBlur('message')}
                     placeholder={language === 'es' 
                       ? 'Cuéntanos sobre tu proyecto y requerimientos específicos...'
                       : 'Tell us about your project and specific requirements...'
                     }
                     rows={4}
                   />
+                  {(touched.message || Object.values(touched).some(Boolean)) && errors.message && <p className="text-red-600 text-xs mt-1">{errors.message}</p>}
                 </div>
                 
-                <Button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white py-3">
+                <Button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white py-3" disabled={loading || !isFormValid()}>
                   <Send className="mr-2 h-4 w-4" />
-                  {language === 'es' ? 'Enviar Solicitud' : 'Send Request'}
+                  {loading
+                    ? (language === 'es' ? 'Enviando...' : 'Sending...')
+                    : (language === 'es' ? 'Enviar Solicitud' : 'Send Request')}
                 </Button>
                 
               </form>
@@ -215,7 +313,7 @@ const Contact = ({ language }: ContactProps) => {
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
-                    allowFullScreen=""
+                    allowFullScreen={true}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     title="Ubicación en Google Maps"

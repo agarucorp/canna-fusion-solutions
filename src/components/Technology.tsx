@@ -54,9 +54,9 @@ const Technology = ({ language }: TechnologyProps) => {
   return (
     <section
       id="technology"
-      className="py-20 bg-gray-50"
+      className="py-20 bg-gray-50 min-h-screen overflow-x-hidden"
     >
-      <div className="mx-auto px-4 space-y-24">
+      <div className="mx-auto px-4 space-y-24 max-w-screen-xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             {language === 'es' ? 'Tecnología' : 'Technology'}
@@ -70,12 +70,12 @@ const Technology = ({ language }: TechnologyProps) => {
         {/* Bloque 1: Spray Dry */}
         <motion.div
           className="grid md:grid-cols-2 gap-4 items-center"
-          initial={{ opacity: 0, x: -60 }}
+          initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="text-left md:pl-24">
+          <div className="text-left">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {language === 'es' ? 'Spray Dry Industrial' : 'Industrial Spray Dry'}
             </h2>
@@ -91,30 +91,22 @@ const Technology = ({ language }: TechnologyProps) => {
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Procesos certificados y controlados' : 'Certified and controlled processes'}</li>
             </ul>
           </div>
-          <div className="flex">
-            <motion.img
+          <div
+            className="flex justify-center md:justify-end"
+          >
+            <img
               src="/process.jpg"
               alt="Spray Dry Industrial"
-              className="rounded-2xl shadow-2xl max-w-lg w-full object-cover md:ml-48"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+              className="rounded-2xl shadow-2xl max-w-lg w-full object-cover"
             />
           </div>
         </motion.div>
         {/* Bloque 2: I+D */}
-        <motion.div
-          className="grid md:grid-cols-2 gap-4 items-start"
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <div className="flex justify-center md:pl-0 md:pr-24 pl-0 order-1 md:order-none">
+        <div className="grid md:grid-cols-2 gap-4 items-start">
+          <div className="flex justify-center order-1 md:order-none">
             <img src="/spray-dry.jpg" alt="I+D y Formulación" className="rounded-2xl shadow-2xl max-w-md w-full object-cover" />
           </div>
-                     <div className="text-left md:pl-0 order-2 md:order-none">
+                     <div className="text-left order-2 md:order-none">
              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                {language === 'es' ? 'I+D y Formulación Personalizada' : 'R&D and Custom Formulation'}
              </h2>
@@ -128,7 +120,7 @@ const Technology = ({ language }: TechnologyProps) => {
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Innovación continua en I+D' : 'Continuous innovation in R&D'}</li>
             </ul>
           </div>
-        </motion.div>
+        </div>
       </div>
       {/* Certificaciones alimenticias */}
       <div className="text-center mb-6 mt-20">

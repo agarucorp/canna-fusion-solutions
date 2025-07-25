@@ -87,53 +87,57 @@ const Sustainability = ({ language }: SustainabilityProps) => {
         </div>
 
         {/* Sección con imagen */}
-        <motion.div
-          className="grid md:grid-cols-2 gap-12 items-center"
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-        >
-          <div className="text-left">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              {language === 'es' ? 'Gestión de Afluentes' : 'Effluent Management'}
-            </h3>
-            <p className="text-lg text-gray-700 mb-6">
-              {language === 'es'
-                ? 'Implementamos sistemas avanzados de tratamiento de afluentes que garantizan que el agua utilizada en nuestros procesos sea devuelta al medio ambiente en condiciones óptimas, cumpliendo con los más altos estándares ambientales.'
-                : 'We implement advanced effluent treatment systems that ensure water used in our processes is returned to the environment in optimal conditions, meeting the highest environmental standards.'}
-            </p>
-            <ul className="space-y-3">
-              <li className="flex items-center text-base text-gray-700">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                {language === 'es' ? 'Tratamiento biológico avanzado' : 'Advanced biological treatment'}
-              </li>
-              <li className="flex items-center text-base text-gray-700">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                {language === 'es' ? 'Cumplimiento de normativas ambientales' : 'Environmental regulation compliance'}
-              </li>
-              <li className="flex items-center text-base text-gray-700">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                {language === 'es' ? 'Monitoreo continuo de calidad' : 'Continuous quality monitoring'}
-              </li>
-            </ul>
-          </div>
-          <div className="flex justify-center">
+        <section className="overflow-x-hidden w-full bg-white">
+          <div className="mx-auto px-4 max-w-screen-xl">
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="grid md:grid-cols-2 gap-12 items-center"
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
             >
-              <img
-                src="/afluentes.jpg"
-                alt={language === 'es' ? 'Gestión de Afluentes' : 'Effluent Management'}
-                className="rounded-2xl shadow-2xl max-w-lg w-full object-cover"
-              />
+              <div className="text-left">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  {language === 'es' ? 'Gestión de Afluentes' : 'Effluent Management'}
+                </h3>
+                <p className="text-lg text-gray-700 mb-6">
+                  {language === 'es'
+                    ? 'Implementamos sistemas avanzados de tratamiento de afluentes que garantizan que el agua utilizada en nuestros procesos sea devuelta al medio ambiente en condiciones óptimas, cumpliendo con los más altos estándares ambientales.'
+                    : 'We implement advanced effluent treatment systems that ensure water used in our processes is returned to the environment in optimal conditions, meeting the highest environmental standards.'}
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center text-base text-gray-700">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                    {language === 'es' ? 'Tratamiento biológico avanzado' : 'Advanced biological treatment'}
+                  </li>
+                  <li className="flex items-center text-base text-gray-700">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                    {language === 'es' ? 'Cumplimiento de normativas ambientales' : 'Environmental regulation compliance'}
+                  </li>
+                  <li className="flex items-center text-base text-gray-700">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                    {language === 'es' ? 'Monitoreo continuo de calidad' : 'Continuous quality monitoring'}
+                  </li>
+                </ul>
+              </div>
+              <div className="flex justify-center">
+                <motion.div
+                  className="relative"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+                >
+                  <img
+                    src="/afluentes.jpg"
+                    alt={language === 'es' ? 'Gestión de Afluentes' : 'Effluent Management'}
+                    className="rounded-2xl shadow-2xl max-w-lg w-full object-cover"
+                  />
+                </motion.div>
+              </div>
             </motion.div>
           </div>
-        </motion.div>
+        </section>
       </div>
     </section>
   );

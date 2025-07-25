@@ -112,3 +112,16 @@
     @apply opacity-100 translate-y-0;
   }
 }
+
+/* Oculta flechitas en inputs type=number (Chrome, Safari, Edge) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Oculta flechitas en Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
