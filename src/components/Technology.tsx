@@ -144,25 +144,31 @@ const Technology = ({ language }: TechnologyProps) => {
       <div className="mt-20">
         <div className="flex flex-wrap justify-center items-center gap-8">
           {/* ISO 22000 */}
-          <img src="/certificaciones/iso22000.png" alt="ISO 22000" className="h-10 w-auto" />
+          <img src="/certificaciones/iso22000.png" alt="ISO 22000" className="h-10 w-auto hidden" />
           {/* HACCP */}
-          <img src="/certificaciones/haccp.png" alt="HACCP" className="h-10 w-auto" />
+          <img src="/certificaciones/haccp.png" alt="HACCP" className="h-10 w-auto hidden" />
           {/* FSSC 22000 */}
-          <img src="/certificaciones/fssc22000.png" alt="FSSC 22000" className="h-10 w-auto" />
+          <img src="/certificaciones/fssc22000.png" alt="FSSC 22000" className="h-10 w-auto hidden" />
           {/* BRCGS */}
-          <img src="/certificaciones/brcgs.png" alt="BRCGS" className="h-10 w-auto" />
+          <img src="/certificaciones/brcgs.png" alt="BRCGS" className="h-10 w-auto hidden" />
           {/* IFS */}
-          <img src="/certificaciones/ifs.png" alt="IFS" className="h-10 w-auto" />
+          <img src="/certificaciones/ifs.png" alt="IFS" className="h-10 w-auto hidden" />
           {/* Kosher */}
           <img src="/certificaciones/kosher.png" alt="Kosher" className="h-10 w-auto" />
           {/* USDA Organic */}
           <img src="/certificaciones/organico.png" alt="USDA Organic" className="h-10 w-auto" />
           {/* Non-GMO */}
           <img src="/certificaciones/nongmo.png" alt="Non-GMO" className="h-10 w-auto" />
+          {/* FDA */}
+          <img src="/certificaciones/fda.png" alt="FDA" className="h-10 w-auto" />
+          {/* GMP */}
+          <img src="/certificaciones/gmp-logo.png" alt="GMP" className="h-10 w-auto" />
+          {/* Halal */}
+          <img src="/certificaciones/halal-logo.png" alt="Halal" className="h-10 w-auto" />
           {/* Gluten Free */}
-          <img src="/certificaciones/glutenfree.png" alt="Gluten Free" className="h-10 w-auto" />
+          <img src="/certificaciones/glutenfree.png" alt="Gluten Free" className="h-10 w-auto hidden" />
           {/* ISO 9001 */}
-          <img src="/certificaciones/iso9001.png" alt="ISO 9001" className="h-10 w-auto" />
+          <img src="/certificaciones/iso9001.png" alt="ISO 9001" className="h-10 w-auto hidden" />
         </div>
       </div>
     </section>
