@@ -105,13 +105,13 @@ const Technology = ({ language }: TechnologyProps) => {
         </motion.div>
         {/* Bloque 2: I+D */}
         <motion.div
-          className="grid md:grid-cols-2 gap-12 items-start"
+          className="grid md:grid-cols-2 gap-4 items-start"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="flex justify-start md:pl-0 md:pr-24 pl-0 order-1 md:order-none">
+          <div className="flex justify-center md:pl-0 md:pr-24 pl-0 order-1 md:order-none">
             <img src="/spray-dry.jpg" alt="I+D y Formulación" className="rounded-2xl shadow-2xl max-w-md w-full object-cover" />
           </div>
           <div className="text-left md:pl-0 md:pr-24 order-2 md:order-none">
