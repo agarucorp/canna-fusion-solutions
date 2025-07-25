@@ -114,15 +114,15 @@ const Technology = ({ language }: TechnologyProps) => {
           <div className="flex justify-center md:pl-0 md:pr-24 pl-0 order-1 md:order-none">
             <img src="/spray-dry.jpg" alt="I+D y Formulación" className="rounded-2xl shadow-2xl max-w-md w-full object-cover" />
           </div>
-          <div className="text-left md:pl-0 order-2 md:order-none">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              {language === 'es' ? 'I+D y Formulación Personalizada' : 'R&D and Custom Formulation'}
-            </h2>
-            <p className="text-lg text-gray-700 mb-4">
-              {language === 'es'
-                ? 'Contamos con un equipo de I+D dedicado al desarrollo de soluciones a medida para cada cliente y aplicación. Innovamos constantemente en formulaciones, blends y procesos para responder a las tendencias y necesidades del mercado global.'
-                : 'We have an R&D team dedicated to developing tailor-made solutions for each client and application. We constantly innovate in formulations, blends, and processes to meet global market trends and needs.'}
-            </p>
+                     <div className="text-left md:pl-0 order-2 md:order-none">
+             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+               {language === 'es' ? 'I+D y Formulación Personalizada' : 'R&D and Custom Formulation'}
+             </h2>
+             <p className="text-lg text-gray-700 mb-4 max-w-2xl">
+               {language === 'es'
+                 ? 'Contamos con un equipo de I+D dedicado al desarrollo de soluciones a medida para cada cliente y aplicación. Innovamos constantemente en formulaciones, blends y procesos para responder a las tendencias y necesidades del mercado global.'
+                 : 'We have an R&D team dedicated to developing tailor-made solutions for each client and application. We constantly innovate in formulations, blends, and processes to meet global market trends and needs.'}
+             </p>
             <ul className="space-y-2 mt-6">
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Desarrollo de productos exclusivos y soporte técnico' : 'Development of exclusive products and technical support'}</li>
               <li className="flex items-center text-base text-gray-700"><div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></div>{language === 'es' ? 'Innovación continua en I+D' : 'Continuous innovation in R&D'}</li>
