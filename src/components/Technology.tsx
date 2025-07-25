@@ -114,7 +114,7 @@ const Technology = ({ language }: TechnologyProps) => {
           <div className="flex justify-center md:pl-0 md:pr-24 pl-0 order-1 md:order-none">
             <img src="/spray-dry.jpg" alt="I+D y Formulación" className="rounded-2xl shadow-2xl max-w-md w-full object-cover" />
           </div>
-          <div className="text-left md:pl-0 md:pr-24 order-2 md:order-none">
+          <div className="text-left md:pl-0 order-2 md:order-none">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {language === 'es' ? 'I+D y Formulación Personalizada' : 'R&D and Custom Formulation'}
             </h2>
