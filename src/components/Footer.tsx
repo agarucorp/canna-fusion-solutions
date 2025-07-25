@@ -86,7 +86,15 @@ const Footer = ({ language }: FooterProps) => {
           </div>
         </div>
         <div className="w-full flex justify-center mt-6">
-          <p className="text-gray-300 text-sm text-center">© Powered by AgaruCorp</p>
+          <a
+            href="https://www.agarucorp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 text-sm text-center no-underline hover:text-white transition-colors cursor-pointer"
+            style={{ textDecoration: 'none' }}
+          >
+            © Powered by AgaruCorp
+          </a>
         </div>
       </div>
     </footer>
